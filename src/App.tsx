@@ -1,18 +1,59 @@
 import React from "react";
-import Github from "./img/uiw_github.svg";
+import { useMediaQuery } from "react-responsive";
+import { useState } from "react";
+
 import "./main.scss";
 
 function App() {
+  const [naviBtn, setNaviBtn] = useState(false);
+  const is800: boolean = useMediaQuery({
+    query: "(max-width:800px)",
+  });
+
   return (
     <>
       <nav className="navigator">
-        <button className="navi_btn">Introduce</button>
-        <button className="navi_btn">Skill</button>
-        <button className="navi_btn">Education</button>
-        <button className="navi_btn">Project</button>
-        <button className="navi_btn">Studies</button>
-        <button className="navi_btn">Price</button>
+        {is800 ? (
+          <div className="tapBtn">
+            <button onClick={() => setNaviBtn(!naviBtn)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="12"
+                viewBox="0 0 18 12"
+                fill="none"
+              >
+                <path
+                  d="M17 1H1M17 6H1M17 11H1"
+                  stroke="black"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            {naviBtn ? (
+              <div className="tapBtn-bar">
+                <button className="navi_btn_800">Introduce</button>
+                <button className="navi_btn_800">Skill</button>
+                <button className="navi_btn_800">Education</button>
+                <button className="navi_btn_800">Project</button>
+                <button className="navi_btn_800">Studies</button>
+                <button className="navi_btn_800">Price</button>
+              </div>
+            ) : null}
+          </div>
+        ) : (
+          <>
+            <button className="navi_btn">Introduce</button>
+            <button className="navi_btn">Skill</button>
+            <button className="navi_btn">Education</button>
+            <button className="navi_btn">Project</button>
+            <button className="navi_btn">Studies</button>
+            <button className="navi_btn">Price</button>
+          </>
+        )}
       </nav>
+
       <section className="body">
         <section className="phone_box">
           <div className="myName_box">
