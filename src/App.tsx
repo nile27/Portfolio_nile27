@@ -54,7 +54,7 @@ function App() {
       </nav>
 
       <section className="body">
-        <section className="phone_box">
+        <header className="phone_box">
           <div className="myName_box">
             <p className="name">임 민 규</p>
             <p className="front-end">프론트엔드 개발자</p>
@@ -107,7 +107,12 @@ function App() {
               <p>E-mail : ddj03104@gmail.com</p>
             </div>
           </div>
-        </section>
+        </header>
+        <article className="phone_box">
+          <div className="header">
+            <span id="header"> Introduce</span>
+          </div>
+        </article>
       </section>
     </>
   );

@@ -6,12 +6,17 @@ $seaBlue: #3f72af;
 $darkBlue: #112d4e;
 
 // Font
-$font: Noto Sans KR;
+$font: "Noto Sans KR", sans-serif;
 $Header: 36px;
 $semiHeader: 28px;
 $body: 16px;
 $phone: 24px;
 $Li: 16px;
+
+:root {
+  font-size: $body;
+  font-family: $font;
+}
 
 * {
   font-family: $font;
@@ -20,10 +25,6 @@ $Li: 16px;
   margin: 0;
   border: 0;
   background-color: $backgroundColor;
-}
-
-:root {
-  font-size: $body;
 }
 
 .navigator {
@@ -39,6 +40,7 @@ $Li: 16px;
 
   @media screen and (max-width: 800px) {
     justify-content: flex-end;
+    padding-right: 20px;
   }
 }
 
@@ -122,7 +124,23 @@ $Li: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-top: 100px;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+
+  @media screen and (max-width: 800px) {
+    justify-content: center;
+  }
+}
+
+#header {
+  font-size: $Header;
+  color: $seaBlue;
+  font-weight: 900;
 }
 
 .phone_box {
