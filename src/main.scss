@@ -50,15 +50,61 @@ $Li: 16px;
   width: auto;
   background-color: transparent;
 }
-.navigator > .tapBtn > .tapBtn-bar {
+
+.navigator > .tapBtn > .hamburgerBtn {
   display: flex;
+  justify-content: flex-end;
+  height: auto;
+  align-items: flex-end;
+  background-color: transparent;
+  flex-direction: column;
+  cursor: pointer;
+}
+@keyframes setMotion {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.navigator > .tapBtn > .hamburgerBtn > .tapBtn-bar {
+  margin-top: 15px;
+  display: none;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
   width: 90px;
   background-color: transparent;
+  animation: setMotion 1s;
 }
-.navigator > .navi_btn {
+
+.navigator > .tapBtn > .hamburgerBtn:hover > .tapBtn-bar {
+  display: flex;
+}
+
+.navi_btn_800 {
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: stretch;
+  cursor: pointer;
+  color: $seaBlue;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navigator > .navi_ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.navigator > ul > .navi_btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,19 +115,6 @@ $Li: 16px;
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
-}
-
-.navi_btn_800 {
-  display: flex;
-  padding: 10px 1rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  align-self: stretch;
-  cursor: pointer;
-  color: $seaBlue;
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .body {

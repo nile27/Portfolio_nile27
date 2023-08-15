@@ -15,7 +15,7 @@ function App() {
       <nav className="navigator">
         {is800 ? (
           <div className="tapBtn">
-            <button onClick={() => setNaviBtn(!naviBtn)}>
+            <div className="hamburgerBtn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -30,27 +30,26 @@ function App() {
                   stroke-linecap="round"
                 />
               </svg>
-            </button>
-            {naviBtn ? (
-              <div className="tapBtn-bar">
-                <button className="navi_btn_800">Introduce</button>
-                <button className="navi_btn_800">Skill</button>
-                <button className="navi_btn_800">Education</button>
-                <button className="navi_btn_800">Project</button>
-                <button className="navi_btn_800">Studies</button>
-                <button className="navi_btn_800">Price</button>
-              </div>
-            ) : null}
+
+              <ul className="tapBtn-bar">
+                <li className="navi_btn_800">Introduce</li>
+                <li className="navi_btn_800">Skill</li>
+                <li className="navi_btn_800">Education</li>
+                <li className="navi_btn_800">Project</li>
+                <li className="navi_btn_800">Studies</li>
+                <li className="navi_btn_800">Price</li>
+              </ul>
+            </div>
           </div>
         ) : (
-          <>
-            <button className="navi_btn">Introduce</button>
-            <button className="navi_btn">Skill</button>
-            <button className="navi_btn">Education</button>
-            <button className="navi_btn">Project</button>
-            <button className="navi_btn">Studies</button>
-            <button className="navi_btn">Price</button>
-          </>
+          <ul className="navi_ul">
+            <li className="navi_btn">Introduce</li>
+            <li className="navi_btn">Skill</li>
+            <li className="navi_btn">Education</li>
+            <li className="navi_btn">Project</li>
+            <li className="navi_btn">Studies</li>
+            <li className="navi_btn">Price</li>
+          </ul>
         )}
       </nav>
 
