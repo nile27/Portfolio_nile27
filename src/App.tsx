@@ -1,6 +1,6 @@
-import React from "react";
 import Nav from "./Pages/navi";
 import Header from "./Pages/header";
+import Introduce from "./Pages/Introduce";
 import { useMediaQuery } from "react-responsive";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
@@ -9,9 +9,9 @@ import "./main.scss";
 
 function App() {
   const View: boolean = useMediaQuery({
-    query: "(max-width:800px)",
+    query: "(max-width:900px)",
   });
-  const [_, setViewMax] = useRecoilState<boolean>(maxView);
+  const [, setViewMax] = useRecoilState<boolean>(maxView);
 
   useEffect(() => {
     setViewMax(View);
@@ -20,7 +20,10 @@ function App() {
   return (
     <>
       <Nav />
-      <Header />
+      <section className="body">
+        <Header />
+        <Introduce />
+      </section>
     </>
   );
 }

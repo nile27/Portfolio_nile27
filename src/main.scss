@@ -11,7 +11,7 @@ $Header: 36px;
 $semiHeader: 28px;
 $body: 16px;
 $phone: 24px;
-$Li: 16px;
+$Li: 18px;
 
 :root {
   font-size: $body;
@@ -24,21 +24,30 @@ $Li: 16px;
   box-sizing: border-box;
   margin: 0;
   border: 0;
-  background-color: $backgroundColor;
+  background-color: transparent;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
+// Nav
+
 .navigator {
-  width: 100%;
+  width: 100vw;
   height: auto;
   min-height: 80px;
+  max-width: 1700px;
   top: 0%;
   display: flex;
-  padding: 1rem 5.3125rem;
+  padding: 1rem 0;
   justify-content: center;
+  align-items: center;
   position: fixed;
   background-color: transparent;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     justify-content: flex-end;
     padding-right: 20px;
   }
@@ -106,6 +115,11 @@ $Li: 16px;
   height: auto;
 }
 
+.navigator > ul {
+  display: flex;
+  justify-content: center;
+}
+
 .navigator > ul > .navi_btn {
   display: flex;
   justify-content: center;
@@ -119,20 +133,35 @@ $Li: 16px;
   cursor: pointer;
 }
 
+// body
+
 .body {
-  width: 100%;
+  width: 100vw;
   display: flex;
+  max-width: 1700px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0 10%;
   margin-top: 100px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0 10rem;
+  }
+
+  @media screen and (max-width: 850px) {
+    margin-top: 60px;
+  }
 }
+
+// Introduce Header
 .header {
   width: 100%;
   display: flex;
   justify-content: start;
+  padding: 1.0625rem 0.75rem;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 850px) {
     justify-content: center;
   }
 }
@@ -145,14 +174,14 @@ $Li: 16px;
 
 .phone_box {
   display: flex;
-  width: 50rem;
+  width: 100%;
   height: auto;
   padding: 1.0625rem 0.75rem;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #3f72af;
 
-  @media screen and(max-width: 800px) {
+  @media screen and(max-width: 850px) {
     padding: 0;
     flex-direction: column;
     justify-content: center;
@@ -181,7 +210,7 @@ $Li: 16px;
 
 .myName_box {
   display: flex;
-  width: 15.3125rem;
+  width: 13.3125rem;
   height: 8.4375rem;
   padding: 0.625rem;
   flex-direction: column;
@@ -257,6 +286,58 @@ $Li: 16px;
     }
     path {
       fill: $seaBlue;
+    }
+  }
+}
+
+// Introduce
+
+.column_box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.flex_box {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and(max-width: 1300px) {
+    flex-direction: column;
+
+    > img {
+      margin-bottom: 20px;
+    }
+  }
+
+  > img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+  }
+
+  > .intro_box {
+    > .intro_head > h1 {
+      font-size: $Header;
+      font-weight: 700;
+      border-bottom: 3px solid $seaBlue;
+      padding-bottom: 10px;
+    }
+    > .intro_span {
+      padding: 20px;
+      > li {
+        margin-bottom: 30px;
+
+        > span {
+          font-size: $Li;
+          font-weight: 500;
+        }
+      }
     }
   }
 }
