@@ -5,7 +5,7 @@ export default function Introduce() {
     <article className="phone_box">
       <div className="column_box">
         <div className="header">
-          <span id="header"> Introduce</span>
+          <h1 id="header"> Introduce</h1>
         </div>
 
         <div className="flex_box">

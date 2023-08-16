@@ -1,6 +1,7 @@
 import Nav from "./Pages/Navi";
 import Header from "./Pages/Header";
 import Introduce from "./Pages/Introduce";
+import Skill from "./Pages/Skill";
 import { useMediaQuery } from "react-responsive";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
@@ -23,6 +24,7 @@ function App() {
       <section className="body">
         <Header />
         <Introduce />
+        <Skill />
       </section>
     </>
   );
