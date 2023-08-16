@@ -1,5 +1,5 @@
-import Nav from "./Pages/navi";
-import Header from "./Pages/header";
+import Nav from "./Pages/Navi";
+import Header from "./Pages/Header";
 import Introduce from "./Pages/Introduce";
 import { useMediaQuery } from "react-responsive";
 import { useEffect } from "react";
