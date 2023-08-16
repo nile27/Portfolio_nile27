@@ -1,3 +1,4 @@
+// 소개
 export default function Introduce() {
   return (
     <header className="phone_box">
