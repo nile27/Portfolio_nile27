@@ -1,58 +1,24 @@
 import React from "react";
+import Nav from "./Pages/navi";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
-
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { maxView } from "./atoms/viewMax";
 import "./main.scss";
 
 function App() {
-  const [naviBtn, setNaviBtn] = useState(false);
-  const is800: boolean = useMediaQuery({
+  const View: boolean = useMediaQuery({
     query: "(max-width:800px)",
   });
+  const [_, setViewMax] = useRecoilState<boolean>(maxView);
+
+  useEffect(() => {
+    setViewMax(View);
+  }, [View, setViewMax]);
 
   return (
     <>
-      <nav className="navigator">
-        {is800 ? (
-          <div className="tapBtn">
-            <div className="hamburgerBtn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="12"
-                viewBox="0 0 18 12"
-                fill="none"
-              >
-                <path
-                  d="M17 1H1M17 6H1M17 11H1"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-
-              <ul className="tapBtn-bar">
-                <li className="navi_btn_800">Introduce</li>
-                <li className="navi_btn_800">Skill</li>
-                <li className="navi_btn_800">Education</li>
-                <li className="navi_btn_800">Project</li>
-                <li className="navi_btn_800">Studies</li>
-                <li className="navi_btn_800">Price</li>
-              </ul>
-            </div>
-          </div>
-        ) : (
-          <ul className="navi_ul">
-            <li className="navi_btn">Introduce</li>
-            <li className="navi_btn">Skill</li>
-            <li className="navi_btn">Education</li>
-            <li className="navi_btn">Project</li>
-            <li className="navi_btn">Studies</li>
-            <li className="navi_btn">Price</li>
-          </ul>
-        )}
-      </nav>
-
+      <Nav />
       <section className="body">
         <header className="phone_box">
           <div className="myName_box">
