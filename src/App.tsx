@@ -3,6 +3,7 @@ import Header from "./Pages/Header";
 import Introduce from "./Pages/Introduce";
 import Skill from "./Pages/Skill";
 import Education from "./Pages/Education";
+import Project from "./Pages/Project";
 import { useMediaQuery } from "react-responsive";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
@@ -27,6 +28,7 @@ function App() {
         <Introduce />
         <Skill />
         <Education />
+        <Project />
       </section>
     </>
   );
