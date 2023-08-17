@@ -8,13 +8,13 @@ import axios from "../img/Skill_front/devicon-plain_axios-wordmark.svg";
 import Typescript from "../img/Skill_front/devicon_typescript.svg";
 import SCSS from "../img/Skill_front/vscode-icons_file-type-scss.svg";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-interface propOBJ {
-  type: boolean;
+interface ismodal {
+  isModal: boolean;
 }
 
-export default function SkillModal() {
+export default function SkillModal(isModal: ismodal) {
   const srcArr: string[] = [
     Javascript,
     HTML,
@@ -29,12 +29,21 @@ export default function SkillModal() {
 
   const [skillModal, setSkillModal] = useState(false);
 
-  function skillModalFunc() {}
+  function skillModalFunc(isModal: boolean) {}
+
+  useEffect(() => {
+    if (!isModal) {
+      setTimeout(() => {});
+    }
+  }, [isModal]);
 
   return (
     <div className="modal_background">
       <div className="modal_box">
-        <ul className="modal_head">
+        <div className="modal_head">
+          <button></button>
+        </div>
+        <ul className="modal-body-box">
           {srcArr.map((item, idx) => {
             return (
               <li>
@@ -43,7 +52,6 @@ export default function SkillModal() {
             );
           })}
         </ul>
-        <div className="modal-body-box"></div>
       </div>
     </div>
   );

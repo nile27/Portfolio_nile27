@@ -352,29 +352,36 @@ body {
   width: 100%;
   gap: 3rem;
 
-  > button {
+  .skillBtn {
     width: 15rem;
     height: 7rem;
     padding: 3.5rem, 4.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     border-radius: 3.125rem;
     background-color: $seaBlue;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
     font-size: $Li;
     font-weight: 700;
+    cursor: pointer;
   }
 }
 
-.flex-center-box > button:hover {
-  background-color: $darkBlue;
-  color: white;
+.modal {
+  width: 100%;
+  height: auto;
 }
-.flex-center-box > button:active {
+
+.skillBtn:hover {
   background-color: $darkBlue;
   color: white;
   box-shadow: none;
+}
+
+.modal_out {
+  animation: setModalMotion_out 1s;
 }
 
 // skill - modal
@@ -391,18 +398,17 @@ body {
 @keyframes setModalMotion_out {
   0% {
     opacity: 1;
+    display: flex;
   }
-  100% {
+  90% {
     opacity: 0;
   }
-}
-
-.fade-out-box {
-  animation: setModalMotion_out 1s;
+  100% {
+    display: none;
+  }
 }
 
 .modal_background {
-  animation: setModalMotion 1s;
   background-color: transparent;
   width: 100%;
   height: 500px;
@@ -414,7 +420,8 @@ body {
 .modal_box {
   animation: setModalMotion 1s;
   background-color: transparent;
-  width: auto;
+  overflow: auto;
+  width: 100%;
   height: 400px;
   border-radius: 30px;
   border: 3px solid $seaBlue;
@@ -423,6 +430,22 @@ body {
 }
 
 .modal_head {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  margin: 15px 10px 0 0;
+  > button {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    background-image: url("./img/octicon_x-12.svg");
+    background-size: cover;
+  }
+}
+
+.modal-body-box {
   padding: 20px 20px;
   display: flex;
   justify-content: center;
@@ -434,15 +457,118 @@ body {
 
   > li {
     width: 5.625rem;
-    height: 5.625rem;
+    height: auto;
     background-color: transparent;
-    overflow: cover;
+    > img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
     :hover {
       box-shadow: 0px 6px 6px 0px $seaBlue;
       border-radius: 10px;
     }
     :active {
       box-shadow: none;
+    }
+  }
+}
+
+// Education
+
+#career-header {
+  font-size: $semiHeader;
+  font-weight: 700;
+
+  padding-bottom: 10px;
+  height: 100%;
+  width: 100%;
+}
+.head-box {
+  display: flex;
+  width: 100%;
+  border-bottom: 3px solid $darkBlue;
+  > button {
+    width: 120px;
+    background-color: purple;
+    color: white;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    font-size: 16px;
+    margin-bottom: 5px;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid $seaBlue;
+
+  > li {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 0 1.75rem;
+  }
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 8rem;
+  white-space: hidden;
+  margin-right: 9rem;
+  height: 100%;
+
+  > span {
+    font-size: $semiHeader;
+    font-weight: 700;
+    white-space: normal;
+    text-align: center;
+  }
+}
+.career {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
+  > ol {
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-weight: 500;
+    font-size: $Li;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > li {
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: $Li;
+      > ul {
+        margin-top: 15px;
+
+        > li {
+          margin-top: 20px;
+          font-weight: 500;
+          font-size: $Li;
+          list-style: circle;
+        }
+      }
     }
   }
 }
