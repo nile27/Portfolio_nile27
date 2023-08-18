@@ -19,6 +19,16 @@ export default function Project() {
       name: "포트폴리오",
       date: "2023.08 ~ 2023.08",
     },
+    {
+      team: "Solo",
+      name: "포트폴리오",
+      date: "2023.08 ~ 2023.08",
+    },
+    {
+      team: "Solo",
+      name: "포트폴리오",
+      date: "2023.08 ~ 2023.08",
+    },
   ];
   const [isTap, setIsTap] = useState<boolean[]>(
     Array.from({ length: projectArr.length }, () => false)
@@ -26,8 +36,14 @@ export default function Project() {
   const [tapIndex, setTapIndex] = useState<number>(0);
 
   function onClickFunc(idx: number) {
-    let arr: boolean[] = [...isTap];
+    let arr: boolean[] = [];
+    isTap[idx]
+      ? (arr = [...isTap])
+      : (arr = Array.from({ length: projectArr.length }, () => false));
+
     arr[idx] = !arr[idx];
+    console.log(arr);
+
     setIsTap(arr);
     setTapIndex(idx);
   }
@@ -52,7 +68,9 @@ export default function Project() {
           );
         })}
       </ul>
-      <div className="tap-body-box">{isTap[tapIndex] ? <Tap /> : null}</div>
+      <div className="tap-body-box">
+        {isTap[tapIndex] ? <Tap idx={tapIndex} /> : null}
+      </div>
     </div>
   );
 }
