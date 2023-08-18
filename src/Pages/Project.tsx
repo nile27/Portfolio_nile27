@@ -19,16 +19,6 @@ export default function Project() {
       name: "포트폴리오",
       date: "2023.08 ~ 2023.08",
     },
-    {
-      team: "Solo",
-      name: "포트폴리오",
-      date: "2023.08 ~ 2023.08",
-    },
-    {
-      team: "Solo",
-      name: "포트폴리오",
-      date: "2023.08 ~ 2023.08",
-    },
   ];
   const [isTap, setIsTap] = useState<boolean[]>(
     Array.from({ length: projectArr.length }, () => false)
@@ -68,9 +58,12 @@ export default function Project() {
           );
         })}
       </ul>
-      <div className="tap-body-box">
-        {isTap[tapIndex] ? <Tap idx={tapIndex} /> : null}
-      </div>
+
+      {isTap[tapIndex] ? (
+        <div className="tap-body-box">
+          <Tap idx={tapIndex} />{" "}
+        </div>
+      ) : null}
     </div>
   );
 }
