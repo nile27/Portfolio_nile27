@@ -1,6 +1,6 @@
 export default function Education() {
   return (
-    <>
+    <div className="box">
       <div className="header">
         <h1 id="header">Education</h1>
       </div>
@@ -21,7 +21,7 @@ export default function Education() {
               </button>
             </div>
 
-            <ol>
+            <ol className="ol">
               <li>컴퓨터통신무인기술학과 (컴퓨터 전공)</li>
               <li>
                 Hannam Design Factory (2019.03 ~ 2020.06)
@@ -104,6 +104,6 @@ export default function Education() {
           </div>
         </li>
       </ul>
-    </>
+    </div>
   );
 }

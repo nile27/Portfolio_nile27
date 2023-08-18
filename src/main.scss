@@ -502,6 +502,22 @@ body {
       box-shadow: none;
     }
   }
+
+  > .github {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    &:hover {
+      border-radius: 100%;
+      background-color: black;
+
+      #git {
+        fill: $seaBlue;
+      }
+    }
+  }
 }
 
 .container {
@@ -511,7 +527,6 @@ body {
   margin-top: 20px;
   width: 100%;
   height: auto;
-  border-bottom: 2px solid $seaBlue;
 
   > li {
     width: 100%;
@@ -545,11 +560,11 @@ body {
   display: flex;
   flex-direction: column;
 
-  > ol {
+  > .ol {
     width: 100%;
     height: auto;
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     font-weight: 500;
     font-size: $Li;
     display: flex;
@@ -584,6 +599,8 @@ body {
   width: 100%;
   height: auto;
   min-height: 200px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid $seaBlue;
 }
 
 .tap-box {
