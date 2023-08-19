@@ -1,4 +1,8 @@
+import { maxView } from "../atoms/viewMax";
+import { useRecoilValue } from "recoil";
+
 export default function Education() {
+  const view = useRecoilValue(maxView);
   return (
     <div className="box">
       <div className="header">
@@ -6,12 +10,19 @@ export default function Education() {
       </div>
       <ul className="container">
         <li>
-          <div className="date">
-            <span>2015.03 ~ 2022.08</span>
-          </div>
+          {!view ? (
+            <div className="date">
+              <span>2015.03 ~ 2022.08</span>{" "}
+            </div>
+          ) : null}
           <div className="career">
             <div className="head-box">
-              <h2 id="career-header">한남대학교</h2>
+              {!view ? (
+                <h2 id="career-header">한남대학교</h2>
+              ) : (
+                <h2 id="career-header">한남대학교 (2015.03 ~ 2022.08)</h2>
+              )}
+
               <button
                 onClick={() => {
                   window.scrollTo(0, 10000);
@@ -80,14 +91,16 @@ export default function Education() {
         </li>
 
         <li>
-          <div className="date">
-            <span>2022.12 ~ 2023.06</span>
-          </div>
+          {!view ? (
+            <div className="date">
+              <span>2022.12 ~ 2023.06</span>
+            </div>
+          ) : null}
           <div className="career">
             <div className="head-box">
               <h2 id="career-header">코드스테이츠</h2>
             </div>
-            <ol>
+            <ol className="ol">
               <li>JavaScript 기반 프론트 엔드 과정</li>
               <li>HTML5 / CSS3를 이용한 웹 개발</li>
               <li>React 프레임워크를 통한 웹 개발</li>

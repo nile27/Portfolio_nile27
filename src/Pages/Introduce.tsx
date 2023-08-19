@@ -9,7 +9,7 @@ export default function Introduce() {
         </div>
 
         <div className="flex_box">
-          <img src={Ellipse} />
+          <img src={Ellipse} alt="profile" />
           <div className="intro_box">
             <div className="intro_head">
               <h1>도전을 좋아하는 개발자 임민규입니다.</h1>

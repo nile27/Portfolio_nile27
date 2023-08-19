@@ -484,7 +484,12 @@ body {
   padding-bottom: 10px;
   height: 100%;
   width: 100%;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 23px;
+  }
 }
+
 .head-box {
   display: flex;
   width: 100%;
@@ -517,6 +522,10 @@ body {
         fill: $seaBlue;
       }
     }
+  }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
   }
 }
 
@@ -559,32 +568,31 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
+}
+.ol {
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-weight: 500;
+  font-size: $Li;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
 
-  > .ol {
-    width: 100%;
-    height: auto;
-    padding-top: 20px;
-    padding-bottom: 50px;
+  > li {
+    margin-top: 20px;
     font-weight: 500;
     font-size: $Li;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 5%;
+    > ul {
+      margin-top: 15px;
 
-    > li {
-      margin-top: 20px;
-      font-weight: 500;
-      font-size: $Li;
-      > ul {
-        margin-top: 15px;
-
-        > li {
-          margin-top: 20px;
-          font-weight: 500;
-          font-size: $Li;
-          list-style: circle;
-        }
+      > li {
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: $Li;
+        list-style: circle;
       }
     }
   }
@@ -825,6 +833,9 @@ body {
     border: 2px solid $seaBlue;
     border-radius: 30px;
     height: auto;
+    @media screen and(max-width: 800px) {
+      min-width: 300px;
+    }
   }
 
   .container_ul > ul {
@@ -851,9 +862,7 @@ body {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      @media screen and(max-width: 800px) {
-        margin: 0;
-      }
+      margin-bottom: 15px;
 
       > img {
         width: 200px;
@@ -862,6 +871,14 @@ body {
       }
       > span {
         font-size: $body;
+      }
+      @media screen and(max-width: 800px) {
+        margin: 0;
+        width: 100%;
+
+        > span {
+          font-size: 12px;
+        }
       }
     }
   }
