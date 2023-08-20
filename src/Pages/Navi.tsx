@@ -20,8 +20,8 @@ export default function Nav() {
               <path
                 d="M17 1H1M17 6H1M17 11H1"
                 stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
               />
             </svg>
 

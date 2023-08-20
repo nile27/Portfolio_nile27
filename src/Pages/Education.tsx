@@ -12,7 +12,7 @@ export default function Education() {
         <li>
           {!view ? (
             <div className="date">
-              <span>2015.03 ~ 2022.08</span>{" "}
+              <span>2015.03 ~ 2022.08</span>
             </div>
           ) : null}
           <div className="career">
@@ -20,7 +20,10 @@ export default function Education() {
               {!view ? (
                 <h2 id="career-header">한남대학교</h2>
               ) : (
-                <h2 id="career-header">한남대학교 (2015.03 ~ 2022.08)</h2>
+                <div>
+                  <h3>2015.03 ~ 2022.08</h3>
+                  <h2 id="career-header">한남대학교 </h2>
+                </div>
               )}
 
               <button

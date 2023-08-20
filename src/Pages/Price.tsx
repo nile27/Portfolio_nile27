@@ -78,8 +78,8 @@ export default function Price() {
           <ul className="price-list-box">
             {arr.map((item, idx) => {
               return (
-                <li>
-                  <img src={item.img} alt={`${item.img}`} key={idx} />
+                <li key={idx}>
+                  <img src={item.img} alt={`${item.img}`} />
 
                   <span>{item.date}</span>
                   <span>{item.name}</span>
