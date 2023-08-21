@@ -490,8 +490,12 @@ body {
   height: 100%;
   width: 100%;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (min-width: 690px) and (max-width: 1000px) {
     font-size: 23px;
+    white-space: pre-wrap;
+  }
+  @media screen and (max-width: 680px) {
+    font-size: 17px;
     white-space: pre-wrap;
   }
 }
@@ -534,6 +538,11 @@ body {
   @media screen and (max-width: 1000px) {
     justify-content: space-between;
     align-items: end;
+  }
+  @media screen and (max-width: 680px) {
+    > div > h3 {
+      font-size: 17px;
+    }
   }
 }
 
