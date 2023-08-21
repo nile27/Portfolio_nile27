@@ -456,8 +456,29 @@ body {
     background-size: cover;
   }
 }
-
 .modal-body-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skill-intro-box {
+  margin-top: 5%;
+  padding: 15px;
+
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+
+  > span {
+    width: 100%;
+    font-size: 20px;
+    white-space: pre-wrap;
+  }
+}
+
+.modal-icon-box {
   padding: 20px 20px;
   display: flex;
   justify-content: center;
@@ -479,9 +500,6 @@ body {
     :hover {
       box-shadow: 0px 6px 6px 0px $seaBlue;
       border-radius: 10px;
-    }
-    :active {
-      box-shadow: none;
     }
   }
 }

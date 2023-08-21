@@ -1,51 +1,56 @@
-import Javascript from "../img/Skill_front/devicon_javascript.svg";
-import HTML from "../img/Skill_front/logos_html-5.svg";
-import CSS3 from "../img/Skill_front/logos_css-3.svg";
-import ReactLogo from "../img/Skill_front/logos_react.svg";
-import StyledComponent from "../img/Skill_front/skill-icons_styledcomponents.svg";
-import Recoil from "../img/Skill_front/simple-icons_recoil.svg";
-import axios from "../img/Skill_front/devicon-plain_axios-wordmark.svg";
-import Typescript from "../img/Skill_front/devicon_typescript.svg";
-import SCSS from "../img/Skill_front/vscode-icons_file-type-scss.svg";
+// skill-front
 
-import { useEffect, useState } from "react";
+import { modalIndex } from "../Pages/Skill";
+import { srcArr, frontArr, etcArr, etcIntroArr } from "../data/Front-end";
+import { useState, useEffect } from "react";
 
 interface ismodal {
-  isModal: boolean;
+  isModal: modalIndex;
+  setIsModal: React.Dispatch<React.SetStateAction<modalIndex>>;
+  index: string;
 }
 
-export default function SkillModal({ isModal }: ismodal) {
-  const srcArr: string[] = [
-    Javascript,
-    HTML,
-    CSS3,
-    ReactLogo,
-    StyledComponent,
-    Recoil,
-    axios,
-    Typescript,
-    SCSS,
-  ];
+export default function SkillModal({ isModal, setIsModal, index }: ismodal) {
+  const [skillModal, setSkillModal] = useState<number>(0);
+  let imgArr: string[] = index === "front" ? srcArr : etcArr;
+  let introArr: string[] = index === "front" ? frontArr : etcIntroArr;
 
-  const [skillModal, setSkillModal] = useState(false);
-
-  function skillModalFunc(isModal: boolean) {}
+  useEffect(() => {
+    if (index === "front") {
+      imgArr = srcArr;
+      introArr = frontArr;
+    } else {
+      imgArr = etcArr;
+      introArr = etcIntroArr;
+    }
+  }, []);
 
   return (
     <>
-      <div className={isModal ? "modal_box" : "modal_out"}>
+      <div className={isModal[index] ? "modal_box" : "modal_out"}>
         <div className="modal_head">
-          <button></button>
+          <button
+            onClick={() => setIsModal({ ...isModal, [index]: false })}
+          ></button>
         </div>
-        <ul className="modal-body-box">
-          {srcArr.map((item, idx) => {
-            return (
-              <li key={idx}>
-                <img src={item} alt={`${item}`} />
-              </li>
-            );
-          })}
-        </ul>
+        <div className="modal-body-box">
+          <ul className="modal-icon-box">
+            {imgArr.map((item, idx) => {
+              return (
+                <li key={idx}>
+                  <img
+                    src={item}
+                    alt={`${item}`}
+                    onMouseOver={() => setSkillModal(idx + 1)}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+          <div className="skill-intro-box">
+            <span>{introArr[skillModal]}</span>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -1,13 +1,25 @@
 import SkillModal from "../Component/Skill_modal";
 import { useState } from "react";
 
-export default function Skill() {
-  const [isModal, setIsModal] = useState<boolean>(false);
-  const [firstTouch, setTouch] = useState<boolean>(false);
+export interface modalIndex {
+  [anyKeyword: string]: boolean;
+  front: boolean;
+  etc: boolean;
+}
 
-  function frontFunc() {
-    setIsModal(!isModal);
+export default function Skill() {
+  const [isModal, setIsModal] = useState<modalIndex>({
+    front: false,
+    etc: false,
+  });
+  const [firstTouch, setTouch] = useState<boolean>(false);
+  const [btnIndex, setBtn] = useState<string>("");
+
+  function frontFunc(index: string) {
+    setIsModal({ ...isModal, [index]: !isModal[index] });
+
     setTouch(true);
+    setBtn(index);
   }
 
   return (
@@ -19,15 +31,26 @@ export default function Skill() {
 
         <div className="flex-center-box">
           <div className="frontDiv skill">
-            <button className="skillBtn front" onClick={frontFunc}>
+            <button
+              className="skillBtn front"
+              onClick={() => frontFunc("front")}
+            >
               Front-End
             </button>
           </div>
 
-          <button className="skillBtn Etc">ETC</button>
+          <button className="skillBtn Etc" onClick={() => frontFunc("etc")}>
+            ETC
+          </button>
         </div>
 
-        {firstTouch ? <SkillModal isModal={isModal} /> : null}
+        {firstTouch ? (
+          <SkillModal
+            isModal={isModal}
+            setIsModal={setIsModal}
+            index={btnIndex}
+          />
+        ) : null}
       </div>
     </article>
   );
