@@ -1,14 +1,13 @@
 import SkillModal from "../Component/Skill_modal";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Skill() {
   const [isModal, setIsModal] = useState<boolean>(false);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const [firstTouch, setTouch] = useState<boolean>(false);
 
-  function frontFunc(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  function frontFunc() {
     setIsModal(!isModal);
-
-    window.scrollTo(0, 1200);
+    setTouch(true);
   }
 
   return (
@@ -27,11 +26,8 @@ export default function Skill() {
 
           <button className="skillBtn Etc">ETC</button>
         </div>
-        {isModal ? (
-          <div ref={contentRef} className="modal">
-            <SkillModal isModal={isModal} />
-          </div>
-        ) : null}
+
+        {firstTouch ? <SkillModal isModal={isModal} /> : null}
       </div>
     </article>
   );

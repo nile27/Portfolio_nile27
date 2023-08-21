@@ -14,7 +14,7 @@ interface ismodal {
   isModal: boolean;
 }
 
-export default function SkillModal(isModal: ismodal) {
+export default function SkillModal({ isModal }: ismodal) {
   const srcArr: string[] = [
     Javascript,
     HTML,
@@ -31,28 +31,22 @@ export default function SkillModal(isModal: ismodal) {
 
   function skillModalFunc(isModal: boolean) {}
 
-  useEffect(() => {
-    if (!isModal) {
-      setTimeout(() => {});
-    }
-  }, [isModal]);
-
   return (
-    <div className="modal_background">
-      <div className="modal_box">
+    <>
+      <div className={isModal ? "modal_box" : "modal_out"}>
         <div className="modal_head">
           <button></button>
         </div>
         <ul className="modal-body-box">
           {srcArr.map((item, idx) => {
             return (
-              <li>
-                <img key={idx} src={item} alt={`${item}`} />
+              <li key={idx}>
+                <img src={item} alt={`${item}`} />
               </li>
             );
           })}
         </ul>
       </div>
-    </div>
+    </>
   );
 }

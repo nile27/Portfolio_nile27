@@ -14,7 +14,7 @@ import "./main.scss";
 
 function App() {
   const View: boolean = useMediaQuery({
-    query: "(max-width:900px)",
+    query: "(max-width:1000px)",
   });
   const [, setViewMax] = useRecoilState<boolean>(maxView);
 

@@ -49,7 +49,7 @@ body {
   background-color: $backgroundColor;
   z-index: 100;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1000px) {
     justify-content: flex-end;
     padding-right: 20px;
     background-color: transparent;
@@ -386,31 +386,24 @@ body {
   box-shadow: none;
 }
 
-.modal_out {
-  animation: setModalMotion_out 1s;
-}
-
 // skill - modal
 
 @keyframes setModalMotion {
   0% {
-    opacity: 0;
+    height: 0;
   }
   100% {
-    opacity: 1;
+    height: 400px;
   }
 }
 
 @keyframes setModalMotion_out {
   0% {
-    opacity: 1;
-    display: flex;
+    height: 400px;
   }
-  90% {
-    opacity: 0;
-  }
+
   100% {
-    display: none;
+    height: 0;
   }
 }
 
@@ -433,6 +426,19 @@ body {
   border: 3px solid $seaBlue;
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
   padding: 15px, 20px;
+}
+
+.modal_out {
+  animation: setModalMotion_out 1s;
+  background-color: transparent;
+  overflow: auto;
+  width: 100%;
+  height: 0;
+  border-radius: 30px;
+  border: 3px solid $seaBlue;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+  padding: 15px, 20px;
+  visibility: hidden;
 }
 
 .modal_head {
@@ -462,7 +468,7 @@ body {
   width: 100%;
 
   > li {
-    width: 5.625rem;
+    width: 60px;
     height: auto;
     background-color: transparent;
     > img {
@@ -491,8 +497,11 @@ body {
   width: 100%;
 
   @media screen and (min-width: 690px) and (max-width: 1000px) {
-    font-size: 23px;
+    font-size: 20px;
     white-space: pre-wrap;
+    > div > h3 {
+      font-size: 17px;
+    }
   }
   @media screen and (max-width: 680px) {
     font-size: 17px;
@@ -540,9 +549,6 @@ body {
     align-items: end;
   }
   @media screen and (max-width: 680px) {
-    > div > h3 {
-      font-size: 17px;
-    }
   }
 }
 
