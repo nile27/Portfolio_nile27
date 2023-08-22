@@ -1,4 +1,3 @@
-import Window from "../img/window32.svg";
 import Git from "../img/uiw_github.svg";
 import { projectArr } from "../data/Project-data";
 import { useState, useRef, useEffect } from "react";
@@ -11,9 +10,8 @@ export default function Tap({ idx }: Idx) {
   const [count, setCount] = useState<number>(0);
   const slideRef = useRef<HTMLDivElement>(null);
   const leng: number = projectArr[idx].imgSrc.length - 1;
-  const maxSwipe: number = projectArr[idx].imgSrc.length * 100;
 
-  function scrollFunc() {
+  function nextScrollFunc() {
     if (count >= leng) {
       // 더 이상 넘어갈 슬라이드가 없으면
       setCount(0); // 1번째 사진으로 넘어갑니다.
@@ -23,20 +21,26 @@ export default function Tap({ idx }: Idx) {
     }
   }
 
-  useEffect(() => {
-    if (slideRef.current) {
-      slideRef.current.style.width = `${leng + 1}10%`;
+  function prevScrollFunc() {
+    if (count < 0) {
+      // 더 이상 넘어갈 슬라이드가 없으면
+      setCount(leng); // 1번째 사진으로 넘어갑니다.
+      // return;  // 클릭이 작동하지 않습니다.
+    } else {
+      setCount(count - 1);
     }
-  }, []);
+  }
 
   useEffect(() => {
     if (slideRef.current) {
+      slideRef.current.style.width = `${leng + 1}00%`;
+      slideRef.current.style.height = `${((leng * 100) / (leng / 3)) * 10}%`;
       slideRef.current.style.transition = "all 0.5s ease-in-out";
       slideRef.current.style.transform = `translateX(-${
         (100 / (leng + 1)) * count
       }%)`;
     }
-  }, [count]);
+  });
 
   return (
     <>
@@ -46,7 +50,7 @@ export default function Tap({ idx }: Idx) {
       </div>
       <div className="img-section">
         <div className="gifbox">
-          <button className="left"></button>
+          <button className="left" onClick={prevScrollFunc}></button>
           <div className="overflow-container">
             <div className="swipe-container" ref={slideRef}>
               {projectArr[idx].imgSrc.map((item, idx) => {
@@ -58,7 +62,7 @@ export default function Tap({ idx }: Idx) {
               })}
             </div>
           </div>
-          <button className="right" onClick={scrollFunc}></button>
+          <button className="right" onClick={nextScrollFunc}></button>
         </div>
       </div>
       <div className="site-intro-box">
@@ -87,7 +91,7 @@ export default function Tap({ idx }: Idx) {
         </div>
         <div className="site-Link">
           <a className="git" href={projectArr[idx].gitLink}>
-            <img src={Git}></img>
+            <img src={Git} alt="git-icon"></img>
             Github
           </a>
           <a className="site" href={projectArr[idx].siteLink}>
