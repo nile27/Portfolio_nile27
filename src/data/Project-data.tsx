@@ -5,7 +5,7 @@ interface projectTap {
   member: string;
   Highlight: string | null;
   explanationList: string[];
-  explanation: string;
+  explanation: string | null;
   retrospect: string;
   stack: string[];
   gitLink: string;
@@ -38,8 +38,31 @@ export const projectArr: projectTap[] = [
       "처음으로 백엔드 분들과 협업한 사이트입니다. 데이터들의 타입,필터링(검색) 기능 등 데이터들을 받아 올 때 사용자에게 어떠한 방식으로 보여 줄지 많은 고민을 했었고, 사장님 계정, 일반 유저 계정 등 어떠한 데이터들을 보여 줄지 많은 회의를 통해 백엔드 개발자와의 의사소통이 얼마나 중요한지 느꼈습니다.",
     retrospect:
       "사이트를 배포한 후 데이터들을 불러오는 것에 대해 Aws의 비용이 많이드는 것을 확인하여, 리펙토링 기간을 가져 데이터의 흐름들을 다시 파악하고, Aws를 통해 데이터를 요청하는 횟수를 줄인 경험이 있습니다. 데이터 흐름을 줄여 하나의 상태에 관리가 됨으로써 유지 보수도 전보다 수월해진 경험을 했습니다.",
-    stack: ["React", "styled-component", "Recoil", "Axiois", "Kakao Map API"],
+    stack: ["React", "styled-component", "Recoil", "Axios", "Kakao Map API"],
     gitLink: "https://github.com/nile27/Eaaaaaaats_refectoring",
     siteLink: "http://main22.s3-website.ap-northeast-2.amazonaws.com/",
+  },
+
+  {
+    head: "Portfolio",
+    date: "2023.08 ~ 2023.08 (2주)",
+    imgSrc: [
+      "https://user-images.githubusercontent.com/118884127/240876205-8526ffcd-84a9-48aa-a49e-7f36252d5e2a.gif",
+      "https://user-images.githubusercontent.com/118884127/240876213-8a1fc9cd-ac09-4efe-baf8-0c6035199baf.gif",
+      "https://user-images.githubusercontent.com/118884127/240876933-3f0cd105-20ac-458f-a3d0-1364f8761a6f.gif",
+      "https://user-images.githubusercontent.com/118884127/241071458-b5f47752-eb3e-4b9b-9f66-116f9a8cfbe1.gif",
+      "https://user-images.githubusercontent.com/118884127/241071936-aa351fd5-eeac-41e6-9087-d1d51aa6f8a9.gif",
+      "https://user-images.githubusercontent.com/118884127/240876217-5c013fea-5bd0-4ba5-aac5-d4278a1c3ab4.gif",
+      "https://user-images.githubusercontent.com/118884127/241087793-ae4fc25a-293f-4ab3-941e-1993b27913cf.gif",
+      "https://user-images.githubusercontent.com/118884127/241088286-99f4ff31-8496-489e-bb63-96388298cc00.gif",
+    ],
+    member: "Solo",
+    Highlight: `타입스크립트를 사용하여 제작한 개인 포트폴리오 반응형 웹 사이트입니다.`,
+    explanationList: [],
+    explanation: null,
+    retrospect: "TypeScript로 prop과 또 Hook에 대한 타입 정리를 하",
+    stack: ["React", "TypeScript", "Recoil", "SCSS", "react-responsive"],
+    gitLink: "https://github.com/nile27/Portfolio_nile27",
+    siteLink: "#",
   },
 ];

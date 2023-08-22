@@ -22,7 +22,7 @@ export default function Tap({ idx }: Idx) {
   }
 
   function prevScrollFunc() {
-    if (count < 0) {
+    if (count <= 0) {
       // 더 이상 넘어갈 슬라이드가 없으면
       setCount(leng); // 1번째 사진으로 넘어갑니다.
       // return;  // 클릭이 작동하지 않습니다.
@@ -64,6 +64,15 @@ export default function Tap({ idx }: Idx) {
           </div>
           <button className="right" onClick={nextScrollFunc}></button>
         </div>
+      </div>
+      <div className="img-number-box">
+        {projectArr[idx].imgSrc.map((_, idx) => {
+          return count === idx ? (
+            <button className="select" key={idx}></button>
+          ) : (
+            <button className="normal" key={idx}></button>
+          );
+        })}
       </div>
       <div className="site-intro-box">
         <div className="site-intro-head">
