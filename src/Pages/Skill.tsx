@@ -1,6 +1,5 @@
 import SkillModal from "../Component/Skill_modal";
 import { useState } from "react";
-
 export interface modalIndex {
   [anyKeyword: string]: boolean;
   front: boolean;
@@ -16,7 +15,6 @@ export default function Skill() {
   const [btnIndex, setBtn] = useState<string>("");
 
   function frontFunc(index: string) {
-    let boolIsModal: modalIndex = { ...isModal };
     for (let key in isModal) {
       if (key !== index) isModal[key] = false;
     }
