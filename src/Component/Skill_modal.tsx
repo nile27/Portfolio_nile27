@@ -2,7 +2,7 @@
 
 import { modalIndex } from "../Pages/Skill";
 import { srcArr, frontArr, etcArr, etcIntroArr } from "../data/Front-end";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface ismodal {
   isModal: modalIndex;
@@ -14,16 +14,6 @@ export default function SkillModal({ isModal, setIsModal, index }: ismodal) {
   const [skillModal, setSkillModal] = useState<number>(0);
   let imgArr: string[] = index === "front" ? srcArr : etcArr;
   let introArr: string[] = index === "front" ? frontArr : etcIntroArr;
-
-  useEffect(() => {
-    if (index === "front") {
-      imgArr = srcArr;
-      introArr = frontArr;
-    } else {
-      imgArr = etcArr;
-      introArr = etcIntroArr;
-    }
-  }, []);
 
   return (
     <>

@@ -1,6 +1,4 @@
 import { Pricearr } from "../data/PriceData";
-import { useState } from "react";
-import Enlargement from "../Component/Img_Enlargement";
 import { useRecoilState } from "recoil";
 import { imgModal, isImgModal } from "../atoms/Price_Modal";
 

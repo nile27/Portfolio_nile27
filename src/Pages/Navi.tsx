@@ -25,14 +25,14 @@ export default function Nav() {
               />
             </svg>
 
-            <ul className="tapBtn-bar">
+            <div className="tapBtn-bar">
               <li className="navi_btn_800">Introduce</li>
               <li className="navi_btn_800">Skill</li>
               <li className="navi_btn_800">Education</li>
               <li className="navi_btn_800">Project</li>
               <li className="navi_btn_800">Studies</li>
               <li className="navi_btn_800">Price</li>
-            </ul>
+            </div>
           </div>
         </div>
       ) : (

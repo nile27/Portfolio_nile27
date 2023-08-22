@@ -1,72 +1,98 @@
 import Window from "../img/window32.svg";
-import { useEffect } from "react";
 import Git from "../img/uiw_github.svg";
+import { projectArr } from "../data/Project-data";
+import { useState, useRef, useEffect } from "react";
 
 interface Idx {
   idx: number;
 }
 
-export default function Tap(idx: Idx) {
+export default function Tap({ idx }: Idx) {
+  const [count, setCount] = useState<number>(0);
+  const slideRef = useRef<HTMLDivElement>(null);
+  const leng: number = projectArr[idx].imgSrc.length - 1;
+  const maxSwipe: number = projectArr[idx].imgSrc.length * 100;
+
+  function scrollFunc() {
+    if (count >= leng) {
+      // 더 이상 넘어갈 슬라이드가 없으면
+      setCount(0); // 1번째 사진으로 넘어갑니다.
+      // return;  // 클릭이 작동하지 않습니다.
+    } else {
+      setCount(count + 1);
+    }
+  }
+
+  useEffect(() => {
+    if (slideRef.current) {
+      slideRef.current.style.width = `${leng + 1}10%`;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (slideRef.current) {
+      slideRef.current.style.transition = "all 0.5s ease-in-out";
+      slideRef.current.style.transform = `translateX(-${
+        (100 / (leng + 1)) * count
+      }%)`;
+    }
+  }, [count]);
+
   return (
     <>
       <div className="tap-head">
-        <h1>Eaaaaaaats (맛집 탐색 사이트)</h1>
-        <span>2023.06 ~ 2023.06 (4주)</span>
+        <h1>{projectArr[idx].head}</h1>
+        <span>{projectArr[idx].date}</span>
       </div>
       <div className="img-section">
-        <img className="window" src={Window} alt="window"></img>
         <div className="gifbox">
           <button className="left"></button>
-          <img src="https://user-images.githubusercontent.com/118884127/240876205-8526ffcd-84a9-48aa-a49e-7f36252d5e2a.gif"></img>
-          <button className="right"></button>
+          <div className="overflow-container">
+            <div className="swipe-container" ref={slideRef}>
+              {projectArr[idx].imgSrc.map((item, idx) => {
+                return (
+                  <div className="swipe" key={idx}>
+                    <img src={item} alt={`${idx}`} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <button className="right" onClick={scrollFunc}></button>
         </div>
       </div>
       <div className="site-intro-box">
         <div className="site-intro-head">
           <h1>사이트 소개</h1>
-          <span>Team: FE: 4명, BE: 3명</span>
+          <span>{projectArr[idx].member}</span>
         </div>
         <div className="site-intro">
-          <span className="site-Highlight">
-            “점심은 뭐 먹지”, “한 끼를 먹어도 제대로 먹어야지”라는 고민, 맛집
-            탐방이 취미인 사용자들을 위한 맛집 탐색 사이트
-          </span>
+          <span className="site-Highlight">{projectArr[idx].Highlight}</span>
           <ul className="site-explanation">
-            <li>사용자 주변에 어떤 식당들이 있는지 지도를 통해 알려줍니다.</li>
-            <li>가게 이름, 태그 등을 통해 맛집들을 검색을 할 수가 있습니다.</li>
-            <li>리뷰, 평점을 통해 가게의 평가 및 평점을 매길 수 있습니다.</li>
-            <li>
-              사장님 계정을 통해 자신의 가게 등록 및 수정 등을 할 수가 있습니다.
-            </li>
+            {projectArr[idx].explanationList.map((item, idx) => {
+              return <li key={idx}>{item}</li>;
+            })}
           </ul>
           <div className="site-experience-box">
-            <p>
-              처음으로 백엔드 분들과 협업한 사이트입니다. 데이터들의 타입,
-              필터링(검색) 기능 등 데이터들을 받아 올 때 사용자에게 어떠한
-              방식으로 보여 줄지 많은 고민을 했었고, 사장님 계정, 일반 유저 계정
-              등 어떠한 데이터들을 보여 줄지 많은 회의를 통해 백엔드 개발자와의
-              의사소통이 얼마나 중요한지 느꼈습니다.
-            </p>
+            <p>{projectArr[idx].explanation}</p>
           </div>
           <div className="site-experience-box">
-            <p>
-              사이트를 배포한 후 데이터들을 불러오는 것에 대해 Aws의 비용이 많이
-              드는 것을 확인하여, 리펙토링 기간을 가져 데이터의 흐름들을 다시
-              파악하고, Aws를 통해 데이터를 요청하는 횟수를 줄인 경험이
-              있습니다. 데이터 흐름을 줄여 하나의 상태에 관리가 됨으로써 유지
-              보수도 전보다 수월해진 경험을 했습니다.
-            </p>
+            <p>{projectArr[idx].retrospect}</p>
           </div>
         </div>
         <div className="site-stack">
-          <button>React</button>
+          {projectArr[idx].stack.map((item, idx) => {
+            return <button key={idx}>{item}</button>;
+          })}
         </div>
         <div className="site-Link">
-          <button className="git">
+          <a className="git" href={projectArr[idx].gitLink}>
             <img src={Git}></img>
             Github
-          </button>
-          <button className="site">배포 사이트</button>
+          </a>
+          <a className="site" href={projectArr[idx].siteLink}>
+            배포 사이트
+          </a>
         </div>
       </div>
     </>

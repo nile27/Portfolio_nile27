@@ -14,7 +14,7 @@ export default function Enlargement({ index }: zoom) {
     setisModal(false);
   }
   return (
-    <div className="img-background">
+    <div className="img-background" onClick={handler}>
       <div className="img-body">
         <div className="img-head">
           <button onClick={handler}></button>
