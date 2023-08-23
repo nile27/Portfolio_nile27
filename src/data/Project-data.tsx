@@ -12,6 +12,12 @@ interface projectTap {
   siteLink: string;
 }
 
+interface projectData {
+  team: string;
+  date: string;
+  name: string;
+}
+
 export const projectArr: projectTap[] = [
   {
     head: "Eaaaaaaats (맛집 탐색 사이트)",
@@ -47,12 +53,9 @@ export const projectArr: projectTap[] = [
     head: "Portfolio",
     date: "2023.08 ~ 2023.08 (2주)",
     imgSrc: [
-      "https://user-images.githubusercontent.com/118884127/240876205-8526ffcd-84a9-48aa-a49e-7f36252d5e2a.gif",
+      "https://user-images.githubusercontent.com/118884127/241088286-99f4ff31-8496-489e-bb63-96388298cc00.gif",
       "https://user-images.githubusercontent.com/118884127/240876213-8a1fc9cd-ac09-4efe-baf8-0c6035199baf.gif",
-      "https://user-images.githubusercontent.com/118884127/240876933-3f0cd105-20ac-458f-a3d0-1364f8761a6f.gif",
-      "https://user-images.githubusercontent.com/118884127/241071458-b5f47752-eb3e-4b9b-9f66-116f9a8cfbe1.gif",
-      "https://user-images.githubusercontent.com/118884127/241071936-aa351fd5-eeac-41e6-9087-d1d51aa6f8a9.gif",
-      "https://user-images.githubusercontent.com/118884127/240876217-5c013fea-5bd0-4ba5-aac5-d4278a1c3ab4.gif",
+
       "https://user-images.githubusercontent.com/118884127/241087793-ae4fc25a-293f-4ab3-941e-1993b27913cf.gif",
       "https://user-images.githubusercontent.com/118884127/241088286-99f4ff31-8496-489e-bb63-96388298cc00.gif",
     ],
@@ -63,6 +66,19 @@ export const projectArr: projectTap[] = [
     retrospect: "TypeScript로 prop과 또 Hook에 대한 타입 정리를 하",
     stack: ["React", "TypeScript", "Recoil", "SCSS", "react-responsive"],
     gitLink: "https://github.com/nile27/Portfolio_nile27",
-    siteLink: "#",
+    siteLink: "https://nile27.github.io/",
+  },
+];
+
+export const projectHeadArr: projectData[] = [
+  {
+    team: "Team",
+    name: "Eaaaaaaats",
+    date: "2023.05 ~ 2023.05",
+  },
+  {
+    team: "Solo",
+    name: "포트폴리오",
+    date: "2023.08 ~ 2023.08",
   },
 ];

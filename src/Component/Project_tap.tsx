@@ -10,6 +10,7 @@ export default function Tap({ idx }: Idx) {
   const [count, setCount] = useState<number>(0);
   const slideRef = useRef<HTMLDivElement>(null);
   const leng: number = projectArr[idx].imgSrc.length - 1;
+  let [firstIdx, setFirstIdx] = useState<number>(0);
 
   function nextScrollFunc() {
     if (count >= leng) {
@@ -32,15 +33,20 @@ export default function Tap({ idx }: Idx) {
   }
 
   useEffect(() => {
-    if (slideRef.current) {
+    if (slideRef.current && firstIdx === idx) {
       slideRef.current.style.width = `${leng + 1}00%`;
       slideRef.current.style.height = `${((leng * 100) / (leng / 3)) * 10}%`;
       slideRef.current.style.transition = "all 0.5s ease-in-out";
       slideRef.current.style.transform = `translateX(-${
         (100 / (leng + 1)) * count
       }%)`;
+    } else if (slideRef.current && firstIdx !== idx) {
+      slideRef.current.style.transform = `translateX(-${0}%)`;
+      slideRef.current.style.transition = "all 0s ease-in-out";
+      setFirstIdx(idx);
+      setCount(0);
     }
-  });
+  }, [count, leng, firstIdx, idx]);
 
   return (
     <>

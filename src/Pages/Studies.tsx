@@ -1,5 +1,6 @@
 import { useRecoilValue } from "recoil";
 import { maxView } from "../atoms/viewMax";
+import { scrollRef } from "../App";
 
 interface Studies {
   id: number;
@@ -9,7 +10,7 @@ interface Studies {
   list: string[];
 }
 
-export default function Studies() {
+export default function Studies({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
   const arr: Studies[] = [
     {
@@ -43,7 +44,10 @@ export default function Studies() {
   ];
 
   return (
-    <div className="box">
+    <div
+      className="box"
+      ref={(el) => (content1Ref.current ? (content1Ref.current[4] = el) : null)}
+    >
       <div className="header">
         <h1 id="header">Studies</h1>
       </div>

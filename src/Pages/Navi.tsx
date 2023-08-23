@@ -1,9 +1,40 @@
 import { useRecoilValue } from "recoil";
 import { maxView } from "../atoms/viewMax";
+import { scrollRef } from "../App";
 import "../main.scss";
 
-export default function Nav() {
+interface Menu {
+  [key: string]: number;
+}
+
+export default function Nav({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
+  const menuArr = [
+    "Introduce",
+    "Skill",
+    "Education",
+    "Project",
+    "Studies",
+    "Price",
+  ];
+
+  function scrollFunc(e: React.MouseEvent<HTMLLIElement, MouseEvent>): void {
+    const event: HTMLElement = e.target as HTMLElement;
+    const name: string = event.innerHTML;
+    const menu: Menu = {
+      Introduce: 0,
+      Skill: 1,
+      Education: 2,
+      Project: 3,
+      Studies: 4,
+      Price: 5,
+    };
+    console.log(content1Ref);
+    if (content1Ref.current) {
+      console.log(menu[name]);
+      content1Ref.current[menu[name]]?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
     <nav className="navigator">
@@ -26,23 +57,29 @@ export default function Nav() {
             </svg>
 
             <div className="tapBtn-bar">
-              <li className="navi_btn_800">Introduce</li>
-              <li className="navi_btn_800">Skill</li>
-              <li className="navi_btn_800">Education</li>
-              <li className="navi_btn_800">Project</li>
-              <li className="navi_btn_800">Studies</li>
-              <li className="navi_btn_800">Price</li>
+              {menuArr.map((item, idx) => {
+                return (
+                  <li
+                    key={idx}
+                    className="navi_btn_800"
+                    onClick={(e) => scrollFunc(e)}
+                  >
+                    {item}
+                  </li>
+                );
+              })}
             </div>
           </div>
         </div>
       ) : (
         <ul className="navi_ul">
-          <li className="navi_btn">Introduce</li>
-          <li className="navi_btn">Skill</li>
-          <li className="navi_btn">Education</li>
-          <li className="navi_btn">Project</li>
-          <li className="navi_btn">Studies</li>
-          <li className="navi_btn">Price</li>
+          {menuArr.map((item, idx) => {
+            return (
+              <li key={idx} className="navi_btn" onClick={(e) => scrollFunc(e)}>
+                {item}
+              </li>
+            );
+          })}
         </ul>
       )}
     </nav>

@@ -1,12 +1,13 @@
 import SkillModal from "../Component/Skill_modal";
 import { useState } from "react";
+import { scrollRef } from "../App";
 export interface modalIndex {
   [anyKeyword: string]: boolean;
   front: boolean;
   etc: boolean;
 }
 
-export default function Skill() {
+export default function Skill({ content1Ref }: scrollRef) {
   const [isModal, setIsModal] = useState<modalIndex>({
     front: false,
     etc: false,
@@ -26,7 +27,12 @@ export default function Skill() {
 
   return (
     <article className="phone_box">
-      <div className="column_box">
+      <div
+        className="column_box"
+        ref={(el) =>
+          content1Ref.current ? (content1Ref.current[1] = el) : null
+        }
+      >
         <div className="header">
           <h1 id="header">Skill</h1>
         </div>

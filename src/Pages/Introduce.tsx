@@ -1,9 +1,17 @@
 import Ellipse from "../img/Ellipse 2.png";
+import { scrollRef } from "../App";
 
-export default function Introduce() {
+export default function Introduce({ content1Ref }: scrollRef) {
   return (
     <article className="phone_box">
-      <div className="column_box">
+      <div
+        className="column_box"
+        ref={(el) =>
+          content1Ref.current
+            ? (content1Ref.current[0] = el)
+            : console.log("dasd")
+        }
+      >
         <div className="header">
           <h1 id="header"> Introduce</h1>
         </div>

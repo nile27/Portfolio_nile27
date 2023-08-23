@@ -1,8 +1,9 @@
 import { Pricearr } from "../data/PriceData";
+import { scrollRef } from "../App";
 import { useRecoilState } from "recoil";
 import { imgModal, isImgModal } from "../atoms/Price_Modal";
 
-export default function Price() {
+export default function Price({ content1Ref }: scrollRef) {
   const [zoom, setZoom] = useRecoilState(isImgModal);
   const [, setIndex] = useRecoilState(imgModal);
 
@@ -13,7 +14,10 @@ export default function Price() {
   }
 
   return (
-    <div className="box">
+    <div
+      className="box"
+      ref={(el) => (content1Ref.current ? (content1Ref.current[5] = el) : null)}
+    >
       <div className="header">
         <h1 id="header">Price</h1>
       </div>

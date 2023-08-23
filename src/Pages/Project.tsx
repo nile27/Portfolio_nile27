@@ -1,5 +1,7 @@
 import Tap from "../Component/Project_tap";
 import { useState } from "react";
+import { projectHeadArr } from "../data/Project-data";
+import { scrollRef } from "../App";
 
 interface projectData {
   team: string;
@@ -7,21 +9,9 @@ interface projectData {
   date: string;
 }
 
-export default function Project() {
-  const projectArr: projectData[] = [
-    {
-      team: "Team",
-      name: "Eaaaaaaats",
-      date: "2023.05 ~ 2023.05",
-    },
-    {
-      team: "Solo",
-      name: "포트폴리오",
-      date: "2023.08 ~ 2023.08",
-    },
-  ];
+export default function Project({ content1Ref }: scrollRef) {
   const [isTap, setIsTap] = useState<boolean[]>(
-    Array.from({ length: projectArr.length }, () => false)
+    Array.from({ length: projectHeadArr.length }, () => false)
   );
   const [tapIndex, setTapIndex] = useState<number>(0);
 
@@ -29,26 +19,28 @@ export default function Project() {
     let arr: boolean[] = [];
     isTap[idx]
       ? (arr = [...isTap])
-      : (arr = Array.from({ length: projectArr.length }, () => false));
+      : (arr = Array.from({ length: projectHeadArr.length }, () => false));
 
     arr[idx] = !arr[idx];
-    console.log(arr);
 
     setIsTap(arr);
     setTapIndex(idx);
   }
 
   return (
-    <div className="box">
+    <div
+      className="box"
+      ref={(el) => (content1Ref.current ? (content1Ref.current[3] = el) : null)}
+    >
       <div className="header">
         <h1 id="header">Project</h1>
       </div>
       <ul className="tap-box">
-        {projectArr.map((item, idx) => {
+        {projectHeadArr.map((item, idx) => {
           return (
             <li
               className={isTap[idx] ? "tap-li-box active" : "tap-li-box"}
-              onMouseDown={() => onClickFunc(idx)}
+              onClick={() => onClickFunc(idx)}
               key={idx}
             >
               <span>{item.team}</span>
@@ -61,7 +53,7 @@ export default function Project() {
 
       {isTap[tapIndex] ? (
         <div className="tap-body-box">
-          <Tap idx={tapIndex} />{" "}
+          <Tap idx={tapIndex} />
         </div>
       ) : null}
     </div>

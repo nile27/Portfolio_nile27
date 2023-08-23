@@ -1,10 +1,13 @@
 import { maxView } from "../atoms/viewMax";
 import { useRecoilValue } from "recoil";
-
-export default function Education() {
+import { scrollRef } from "../App";
+export default function Education({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
   return (
-    <div className="box">
+    <div
+      className="box"
+      ref={(el) => (content1Ref.current ? (content1Ref.current[2] = el) : null)}
+    >
       <div className="header">
         <h1 id="header">Education</h1>
       </div>
