@@ -1,8 +1,14 @@
 // 소개
-export default function Introduce() {
+import { scrollRef } from "../App";
+export default function Introduce({ content1Ref }: scrollRef) {
   return (
     <header className="phone_box">
-      <div className="myName_box">
+      <div
+        className="myName_box"
+        ref={(el) =>
+          content1Ref.current ? (content1Ref.current[6] = el) : null
+        }
+      >
         <p className="name">임 민 규</p>
         <p className="front-end">프론트엔드 개발자</p>
       </div>

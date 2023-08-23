@@ -7,9 +7,7 @@ export default function Introduce({ content1Ref }: scrollRef) {
       <div
         className="column_box"
         ref={(el) =>
-          content1Ref.current
-            ? (content1Ref.current[0] = el)
-            : console.log("dasd")
+          content1Ref.current ? (content1Ref.current[0] = el) : null
         }
       >
         <div className="header">

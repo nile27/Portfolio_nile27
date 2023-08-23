@@ -29,10 +29,12 @@ export default function Nav({ content1Ref }: scrollRef) {
       Studies: 4,
       Price: 5,
     };
-    console.log(content1Ref);
+
     if (content1Ref.current) {
-      console.log(menu[name]);
-      content1Ref.current[menu[name]]?.scrollIntoView({ behavior: "smooth" });
+      content1Ref.current[menu[name]]?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }
 

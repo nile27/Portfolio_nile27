@@ -7,6 +7,7 @@ import Project from "./Pages/Project";
 import Studies from "./Pages/Studies";
 import Price from "./Pages/Price";
 import Enlargement from "./Component/Img_Enlargement";
+import topBtn from "./img/topBtn.svg";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useRef } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -37,7 +38,7 @@ function App() {
     <>
       <Nav content1Ref={content1Ref} />
       <section className="body">
-        <Header />
+        <Header content1Ref={content1Ref} />
         <Introduce content1Ref={content1Ref} />
         <Skill content1Ref={content1Ref} />
         <Education content1Ref={content1Ref} />
@@ -46,6 +47,9 @@ function App() {
         <Price content1Ref={content1Ref} />
         {isImgModalState ? <Enlargement index={imgModalState} /> : null}
       </section>
+      <button className="topBTN" onClick={() => window.scrollTo(0, 0)}>
+        <img src={topBtn} alt="topbtn"></img>
+      </button>
     </>
   );
 }
