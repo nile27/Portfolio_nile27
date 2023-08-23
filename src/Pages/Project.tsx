@@ -3,12 +3,6 @@ import { useState } from "react";
 import { projectHeadArr } from "../data/Project-data";
 import { scrollRef } from "../App";
 
-interface projectData {
-  team: string;
-  name: string;
-  date: string;
-}
-
 export default function Project({ content1Ref }: scrollRef) {
   const [isTap, setIsTap] = useState<boolean[]>(
     Array.from({ length: projectHeadArr.length }, () => false)

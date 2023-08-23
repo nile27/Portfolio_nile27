@@ -1,4 +1,4 @@
-import Ellipse from "../img/Ellipse 2.png";
+import Ellipse from "../img/Portfolio_profile.jpeg";
 import { scrollRef } from "../App";
 
 export default function Introduce({ content1Ref }: scrollRef) {
@@ -15,7 +15,7 @@ export default function Introduce({ content1Ref }: scrollRef) {
         </div>
 
         <div className="flex_box">
-          <img src={Ellipse} alt="profile" />
+          <img className="profile" src={Ellipse} alt="profile" />
           <div className="intro_box">
             <div className="intro_head">
               <h1>도전을 좋아하는 개발자 임민규입니다.</h1>

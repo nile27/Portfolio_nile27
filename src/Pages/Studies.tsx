@@ -2,7 +2,7 @@ import { useRecoilValue } from "recoil";
 import { maxView } from "../atoms/viewMax";
 import { scrollRef } from "../App";
 
-interface Studies {
+interface StudiesObj {
   id: number;
   date: string;
   name: string;
@@ -12,7 +12,7 @@ interface Studies {
 
 export default function Studies({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
-  const arr: Studies[] = [
+  const arr: StudiesObj[] = [
     {
       id: 1,
       date: "2015.03 ~ 2022.08",
