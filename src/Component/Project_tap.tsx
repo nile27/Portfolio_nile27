@@ -112,6 +112,11 @@ export default function Tap({ idx }: Idx) {
           <a className="site" href={projectArr[idx].siteLink}>
             배포 사이트
           </a>
+          {projectArr[idx].FigmaLink ? (
+            <a className="Figma" href={projectArr[idx].FigmaLink}>
+              Figma (초기 디자인)
+            </a>
+          ) : null}
         </div>
       </div>
     </>

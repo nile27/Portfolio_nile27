@@ -32,7 +32,7 @@ export default function WMModal({ setIsModal }: isModal) {
   function prevScrollFunc() {
     if (count <= 0) {
       // 더 이상 넘어갈 슬라이드가 없으면
-      setCount(leng); // 1번째 사진으로 넘어갑니다.
+      setCount(leng + 1); // 1번째 사진으로 넘어갑니다.
       // return;  // 클릭이 작동하지 않습니다.
     } else {
       setCount(count - 1);

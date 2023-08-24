@@ -15,6 +15,7 @@ interface projectTap {
   stack: string[];
   gitLink: string;
   siteLink: string;
+  FigmaLink: string | undefined;
 }
 
 interface projectData {
@@ -59,6 +60,7 @@ export const projectArr: projectTap[] = [
     ],
     gitLink: "https://github.com/nile27/Eaaaaaaats_refectoring",
     siteLink: "http://main22.s3-website.ap-northeast-2.amazonaws.com/",
+    FigmaLink: undefined,
   },
 
   {
@@ -67,9 +69,15 @@ export const projectArr: projectTap[] = [
     imgSrc: [Portfolio1, Portfolio2, Portfolio3, Portfolio4],
     member: "Solo",
     Highlight: `타입스크립트를 사용하여 제작한 개인 포트폴리오 반응형 웹 사이트입니다.`,
-    explanationList: [],
-    explanation: null,
-    retrospect: "TypeScript로 prop과 또 Hook에 대한 타입 정리를 하",
+    explanationList: [
+      "반응형 웹 사이트 입니다.",
+      "Tap, Modal 등의 UI을 구현하였습니다.",
+      "메뉴를 통해 해당 위치로 Scroll이 가능합니다.",
+    ],
+    explanation:
+      "포트폴리오를 제작하기 위해 Notion 같은 플랫폼을 사용하다 저 만의 포트폴리오를 만들어 보기 위해서 제작을 하였습니다. css 라이브러리인 styled-component만 사용하다가 다른 css 툴을 사용해 보기 위해서 ScSS를 사용하여 제작하였습니다. 애니메이션 효과를 줄 수 있는 Keyframe을 사용하고, Fade-in/out, DropDown 등 다양한 애니메이션을 제작 하였고, react-responsive라는 라이브러리를 통해 Dom Selector들 보다 쉽게 box의 사이즈 조절을 하여 반응형 웹을 제작하였습니다.",
+    retrospect:
+      "내비게이션 바, DropDown 창 등을 Keyframe을 통해 애니메이션 효과를 주워 변화가 적은 애니메이션으로도, 유저가 사용하기 조금 더 편안한 느낌을 줄 수 있다는 것을 배웠고, 반응형의 사이즈마다 어떤 식으로 정보들을 보여줄지 많은 고민을 했습니다. 그 결과 웹 사이즈가 작아질 때, flex-박스를 통해 보여주는 것보다 아래로 내려주어서 정보 전달에 조금 더 신경 쓰는 것들이 좋은 UI를 가진 다는 것을 앓게 되었습니다. 타입 스크립트를 사용하면서 useState, useRef 등 타입에 대해서 알게 되었고, 또 flexible 한 언어가 아니기 때문에 타입 가드를 사용하는 방법도 배웠습니다.",
     stack: [
       "React",
       "Figma",
@@ -80,6 +88,8 @@ export const projectArr: projectTap[] = [
     ],
     gitLink: "https://github.com/nile27/Portfolio_nile27",
     siteLink: "https://nile27.github.io/",
+    FigmaLink:
+      "https://www.figma.com/file/g0fMpeE9IiQ8Ww1Vd37qBd/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4(UI)?type=design&node-id=0-1&mode=design&t=oLZkiFIQhixAqGtt-0",
   },
 ];
 

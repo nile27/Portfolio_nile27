@@ -1,4 +1,5 @@
 import { useRecoilValue } from "recoil";
+import { useRef, useEffect, useState } from "react";
 import { maxView } from "../atoms/viewMax";
 import { scrollRef } from "../App";
 import "../main.scss";
@@ -9,6 +10,8 @@ interface Menu {
 
 export default function Nav({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
+  const naviScroll = useRef<HTMLUListElement>(null);
+
   const menuArr = [
     "Introduce",
     "Skill",
@@ -74,7 +77,7 @@ export default function Nav({ content1Ref }: scrollRef) {
           </div>
         </div>
       ) : (
-        <ul className="navi_ul">
+        <ul className="navi_ul" ref={naviScroll}>
           {menuArr.map((item, idx) => {
             return (
               <li key={idx} className="navi_btn" onClick={(e) => scrollFunc(e)}>
