@@ -1,8 +1,11 @@
 import { maxView } from "../atoms/viewMax";
 import { useRecoilValue } from "recoil";
 import { scrollRef } from "../App";
+import { useState } from "react";
+import WMModal from "./WM_modal";
 export default function Education({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
+  const [isModal, setIsModal] = useState<boolean>(false);
   return (
     <div
       className="box"
@@ -99,12 +102,54 @@ export default function Education({ content1Ref }: scrollRef) {
         <li>
           {!view ? (
             <div className="date">
+              <span>2020.03 ~ 2021.03</span>
+            </div>
+          ) : null}
+          <div className="career">
+            <div className="head-box">
+              {!view ? (
+                <h2 id="career-header">WM (물 절약 플랫폼 - 개인 사업자)</h2>
+              ) : (
+                <div>
+                  <h3>2020.03 ~ 2021.03</h3>
+                  <h2 id="career-header">WM (물 절약 플랫폼 - 개인 사업자)</h2>
+                </div>
+              )}
+
+              <button
+                onClick={() => {
+                  setIsModal(!isModal);
+                }}
+              >
+                시제품
+              </button>
+            </div>
+            {isModal ? <WMModal setIsModal={setIsModal} /> : null}
+            <ol className="ol">
+              <li>WM 경영 및 대표, 시제품 담당</li>
+              <li>2020 중소벤처기업부 예비창업패키지 선정</li>
+              <li>시제품 제작 (외주 업체) </li>
+              <li>학생 창업유망팀 300 경진대회 300팀 최종 선정 - 2020.08</li>
+            </ol>
+          </div>
+        </li>
+
+        <li>
+          {!view ? (
+            <div className="date">
               <span>2022.12 ~ 2023.06</span>
             </div>
           ) : null}
           <div className="career">
             <div className="head-box">
-              <h2 id="career-header">코드스테이츠</h2>
+              {!view ? (
+                <h2 id="career-header">한남대학교</h2>
+              ) : (
+                <div>
+                  <h3>2022.12 ~ 2023.06</h3>
+                  <h2 id="career-header">코드스테이츠</h2>
+                </div>
+              )}
             </div>
             <ol className="ol">
               <li>JavaScript 기반 프론트 엔드 과정</li>
