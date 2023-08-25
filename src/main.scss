@@ -678,13 +678,17 @@ body {
     justify-content: space-between;
     flex-wrap: nowrap;
     padding: 0 1.75rem;
+    min-width: 800px;
+    margin-bottom: 30px;
   }
 }
 
 .date {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+
+  flex-direction: column;
   width: 8rem;
   white-space: hidden;
   margin-right: 9rem;
@@ -693,7 +697,7 @@ body {
   > span {
     font-size: $semiHeader;
     font-weight: 700;
-    white-space: normal;
+    white-space: pre-wrap;
     text-align: center;
   }
 }

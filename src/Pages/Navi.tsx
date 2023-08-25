@@ -1,5 +1,5 @@
 import { useRecoilValue } from "recoil";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { maxView } from "../atoms/viewMax";
 import { scrollRef } from "../App";
 import "../main.scss";

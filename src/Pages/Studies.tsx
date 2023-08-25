@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
 import { maxView } from "../atoms/viewMax";
 import { scrollRef } from "../App";
-
+import { arr } from "../data/Studies-data";
 interface StudiesObj {
   id: number;
   date: string;
@@ -12,36 +12,6 @@ interface StudiesObj {
 
 export default function Studies({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
-  const arr: StudiesObj[] = [
-    {
-      id: 1,
-      date: "2015.03 ~ 2022.08",
-      name: "그알티 (JavaScript _ 알고리즘 스터디)",
-      Link: "https://github.com/nincoding/algorithm-study/tree/main/nile27",
-      list: [
-        "매주 자신이 풀었던 자바스크립트 알고리즘 문제에 대해 설명하고 코드 리뷰를 갖는 스터디",
-        "주 1회 회의 진행",
-      ],
-    },
-    {
-      id: 2,
-      date: "2023.06 ~ 2023.08",
-      name: "스떠디 (JavaScript _ 알고리즘 스터디)",
-      Link: "https://github.com/nile27/algorithm",
-      list: [
-        "백준 그룹을 통해 매주 알고리즘을 주제를 정하여 풀고 각자 코드 리뷰를 갖는 스터디 (주제 우측 표에 난이도 별로 지정)",
-        "백준의 “바킹독”  오픈 문제집 풀이 스터디",
-        "바킹독에 주제가 없을 경우 프로그래머스에서 문제로 대처",
-      ],
-    },
-    {
-      id: 3,
-      date: "2023.07 ~ 2023.07",
-      name: "타입스크립트 입문 - 기초부터 실전까지",
-      Link: null,
-      list: ["타입 스크립트 기초 문법 및 실습"],
-    },
-  ];
 
   return (
     <div
@@ -58,6 +28,8 @@ export default function Studies({ content1Ref }: scrollRef) {
               {!view ? (
                 <div className="date">
                   <span>{item.date}</span>
+                  <span>~</span>
+                  <span>{item.finish}</span>
                 </div>
               ) : null}
               <div className="career">
