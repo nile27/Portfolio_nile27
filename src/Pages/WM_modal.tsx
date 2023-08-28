@@ -54,6 +54,9 @@ export default function WMModal({ setIsModal }: isModal) {
     <>
       <div className="img-background" onClick={handler}></div>
       <div className="modal-div">
+        <div className="img-head">
+          <button onClick={handler}></button>
+        </div>
         <div className="gifbox-modal">
           <button className="left" onClick={prevScrollFunc}></button>
           <div className="overflow-container">

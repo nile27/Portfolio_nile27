@@ -2,13 +2,6 @@ import { useRecoilValue } from "recoil";
 import { maxView } from "../atoms/viewMax";
 import { scrollRef } from "../App";
 import { arr } from "../data/Studies-data";
-interface StudiesObj {
-  id: number;
-  date: string;
-  name: string;
-  Link: string | null;
-  list: string[];
-}
 
 export default function Studies({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);

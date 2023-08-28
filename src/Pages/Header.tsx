@@ -58,6 +58,7 @@ export default function Introduce({ content1Ref }: scrollRef) {
         <div className="email_box">
           <p>Phone : 010-8671-5431 </p>
           <p>E-mail : ddj03104@gmail.com</p>
+          <p>Address : 대전광역시 동구</p>
         </div>
       </div>
     </header>
