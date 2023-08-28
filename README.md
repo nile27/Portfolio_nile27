@@ -4,7 +4,7 @@
 ![nile27](https://capsule-render.vercel.app/api?type=Waving&color=46AEDE&text=nile27'Portfolio&fontColor=ffffff&height=150)
 
 # 임민규 개인 포트폴리오 사이트
-## 노션이나 이력서 플랫폼을 사용하여 형식적인 포트폴리오보다 실제로 웹으로 만들어보기 위해 제작한 사이트입니다.
+ 노션이나 이력서 플랫폼을 사용하여 형식적인 포트폴리오보다 실제로 웹으로 만들어보기 위해 제작한 사이트입니다.
 
 </div>
 </br>
