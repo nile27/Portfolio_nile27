@@ -10,6 +10,8 @@ interface projectTap {
   member: string;
   Highlight: string | null;
   explanationList: string[];
+  testEmail: string | null;
+  testPw: string | null;
   explanation: string | null;
   retrospect: string;
   stack: string[];
@@ -46,6 +48,8 @@ export const projectArr: projectTap[] = [
       "리뷰, 평점을 통해 가게의 평가 및 평점을 매길 수 있습니다.",
       "사장님 계정을 통해 자신의 가게 등록 및 수정 등을 할 수가 있습니다.",
     ],
+    testEmail: "Email - 사장님: test@gmail.com / 유저: user@gmail.com",
+    testPw: "PW - 12341234",
     explanation:
       "처음으로 백엔드 분들과 협업한 사이트입니다. 데이터들의 타입,필터링(검색) 기능 등 데이터들을 받아 올 때 사용자에게 어떠한 방식으로 보여 줄지 많은 고민을 했었고, 사장님 계정, 일반 유저 계정 등 어떠한 데이터들을 보여 줄지 많은 회의를 통해 백엔드 개발자와의 의사소통이 얼마나 중요한지 느꼈습니다.",
     retrospect:
@@ -74,6 +78,8 @@ export const projectArr: projectTap[] = [
       "Tap, Modal 등의 UI을 구현하였습니다.",
       "메뉴를 통해 해당 위치로 Scroll이 가능합니다.",
     ],
+    testEmail: null,
+    testPw: null,
     explanation:
       "포트폴리오를 제작하기 위해 Notion 같은 플랫폼을 사용하다 저 만의 포트폴리오를 만들어 보기 위해서 제작을 하였습니다. css 라이브러리인 styled-component만 사용하다가 다른 css 툴을 사용해 보기 위해서 ScSS를 사용하여 제작하였습니다. 애니메이션 효과를 줄 수 있는 Keyframe을 사용하고, Fade-in/out, DropDown 등 다양한 애니메이션을 제작 하였고, react-responsive라는 라이브러리를 통해 Dom Selector들 보다 쉽게 box의 사이즈 조절을 하여 반응형 웹을 제작하였습니다.",
     retrospect:

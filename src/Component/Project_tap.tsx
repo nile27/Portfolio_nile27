@@ -85,6 +85,13 @@ export default function Tap({ idx }: Idx) {
           <h1>사이트 소개</h1>
           <span>{projectArr[idx].member}</span>
         </div>
+        {projectArr[idx].testEmail ? (
+          <ul className="test-email">
+            <h1>테스트 계정</h1>
+            <li>{projectArr[idx].testEmail}</li>
+            <li>{projectArr[idx].testPw}</li>
+          </ul>
+        ) : null}
         <div className="site-intro">
           <span className="site-Highlight">{projectArr[idx].Highlight}</span>
           <ul className="site-explanation">
@@ -92,6 +99,7 @@ export default function Tap({ idx }: Idx) {
               return <li key={idx}>{item}</li>;
             })}
           </ul>
+
           <div className="site-experience-box">
             <p>{projectArr[idx].explanation}</p>
           </div>

@@ -4,9 +4,7 @@ import { projectHeadArr } from "../data/Project-data";
 import { scrollRef } from "../App";
 
 export default function Project({ content1Ref }: scrollRef) {
-  const [isTap, setIsTap] = useState<boolean[]>(
-    Array.from({ length: projectHeadArr.length }, () => false)
-  );
+  const [isTap, setIsTap] = useState<boolean[]>([true, false]);
   const [tapIndex, setTapIndex] = useState<number>(0);
 
   function onClickFunc(idx: number) {
