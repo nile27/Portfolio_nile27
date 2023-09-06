@@ -9,7 +9,7 @@ export default function Studies({ content1Ref }: scrollRef) {
   return (
     <div
       className="box"
-      ref={(el) => (content1Ref.current ? (content1Ref.current[4] = el) : null)}
+      ref={(el) => (content1Ref.current ? (content1Ref.current[7] = el) : null)}
     >
       <div className="header">
         <h1 id="header">Studies</h1>
@@ -28,11 +28,20 @@ export default function Studies({ content1Ref }: scrollRef) {
               <div className="career">
                 <div className="head-box">
                   {!view ? (
-                    <h2 id="career-header">{item.name}</h2>
+                    <div className="career-head-box">
+                      <h2 id="career-header">{item.name}</h2>
+                      <span>{item.subname}</span>
+                    </div>
                   ) : (
                     <div>
-                      <h3>{item.date}</h3>
-                      <h2 id="career-header">{item.name}</h2>
+                      <h3>
+                        {item.date} ~ {item.finish}
+                      </h3>
+                      <div className="career-head-box">
+                        <h2 id="career-header">
+                          {item.name}: {item.subname}
+                        </h2>
+                      </div>
                     </div>
                   )}
                   {item.Link ? (

@@ -1,13 +1,14 @@
 import Nav from "./Pages/Navi";
-import Header from "./Pages/Header";
+import Contact from "./Pages/Contact";
 import Introduce from "./Pages/Introduce";
 import Skill from "./Pages/Skill";
 import Education from "./Pages/Education";
 import Project from "./Pages/Project";
 import Studies from "./Pages/Studies";
 import Price from "./Pages/Price";
+import Career from "./Pages/Career";
 import Enlargement from "./Component/Img_Enlargement";
-import topBtn from "./img/topBtn.svg";
+
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useRef } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -17,13 +18,13 @@ import { imgModal, isImgModal } from "./atoms/Price_Modal";
 import "./main.scss";
 
 export interface scrollRef {
-  content1Ref: React.RefObject<null[] | HTMLDivElement[]>;
+  content1Ref: React.RefObject<null[] | HTMLDivElement[] | HTMLHeadElement[]>;
 }
 
 function App() {
   const content1Ref = useRef<null[] | HTMLDivElement[]>([]);
   const View: boolean = useMediaQuery({
-    query: "(max-width:1000px)",
+    query: "(max-width:1100px)",
   });
 
   const [, setViewMax] = useRecoilState<boolean>(maxView);
@@ -35,22 +36,23 @@ function App() {
   }, [View, setViewMax]);
 
   return (
-    <>
-      <Nav content1Ref={content1Ref} />
+    <div className="rootBox">
       <section className="body">
-        <Header content1Ref={content1Ref} />
+        <Contact content1Ref={content1Ref} />
         <Introduce content1Ref={content1Ref} />
         <Skill content1Ref={content1Ref} />
+        <Career content1Ref={content1Ref} />
+        <Price content1Ref={content1Ref} />
         <Education content1Ref={content1Ref} />
         <Project content1Ref={content1Ref} />
         <Studies content1Ref={content1Ref} />
-        <Price content1Ref={content1Ref} />
+
         {isImgModalState ? <Enlargement index={imgModalState} /> : null}
       </section>
-      <button className="topBTN" onClick={() => window.scrollTo(0, 0)}>
-        <img src={topBtn} alt="topbtn"></img>
-      </button>
-    </>
+      <>
+        <Nav content1Ref={content1Ref} />
+      </>
+    </div>
   );
 }
 

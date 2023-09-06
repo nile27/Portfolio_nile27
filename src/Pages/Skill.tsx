@@ -30,7 +30,7 @@ export default function Skill({ content1Ref }: scrollRef) {
       <div
         className="column_box"
         ref={(el) =>
-          content1Ref.current ? (content1Ref.current[1] = el) : null
+          content1Ref.current ? (content1Ref.current[2] = el) : null
         }
       >
         <div className="header">

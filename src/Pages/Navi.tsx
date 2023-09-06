@@ -2,6 +2,7 @@ import { useRecoilValue } from "recoil";
 import { useRef } from "react";
 import { maxView } from "../atoms/viewMax";
 import { scrollRef } from "../App";
+import topBtn from "../img/topBtn.svg";
 import "../main.scss";
 
 interface Menu {
@@ -13,24 +14,28 @@ export default function Nav({ content1Ref }: scrollRef) {
   const naviScroll = useRef<HTMLUListElement>(null);
 
   const menuArr = [
+    "Contact",
     "Introduce",
     "Skill",
+    "Career",
+    "Price",
     "Education",
     "Project",
     "Studies",
-    "Price",
   ];
 
   function scrollFunc(e: React.MouseEvent<HTMLLIElement, MouseEvent>): void {
     const event: HTMLElement = e.target as HTMLElement;
     const name: string = event.innerHTML;
     const menu: Menu = {
-      Introduce: 0,
-      Skill: 1,
-      Education: 2,
-      Project: 3,
-      Studies: 4,
-      Price: 5,
+      Contact: 0,
+      Introduce: 1,
+      Skill: 2,
+      Career: 3,
+      Price: 4,
+      Education: 5,
+      Project: 6,
+      Studies: 7,
     };
 
     if (content1Ref.current) {
@@ -87,6 +92,9 @@ export default function Nav({ content1Ref }: scrollRef) {
           })}
         </ul>
       )}
+      <button className="topBTN" onClick={() => window.scrollTo(0, 0)}>
+        <img src={topBtn} alt="topbtn"></img>
+      </button>
     </nav>
   );
 }
