@@ -400,8 +400,11 @@ body {
   @media screen and(max-width: 1300px) {
     flex-direction: column;
 
-    > .profile > img {
-      margin-bottom: 20px;
+    > .profile {
+      margin-bottom: 15px;
+      > img {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -630,6 +633,38 @@ body {
   margin: 15px 0 0px 15px;
   font-size: 17px;
   color: rgba(0, 0, 0, 0.5);
+}
+.career-flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  padding-top: 30px;
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.video-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  max-height: 600px;
+}
+
+.career-span {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.video {
+  width: 100%;
+  max-height: 600px;
+
+  > source {
+    width: 100%;
+  }
 }
 
 // Education
@@ -1138,7 +1173,8 @@ body {
   height: 500px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   .container_ul {
     width: 100%;
     padding: 10px;

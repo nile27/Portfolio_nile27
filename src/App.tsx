@@ -43,15 +43,15 @@ function App() {
         <Skill content1Ref={content1Ref} />
         <Career content1Ref={content1Ref} />
         <Price content1Ref={content1Ref} />
+
         <Education content1Ref={content1Ref} />
         <Project content1Ref={content1Ref} />
         <Studies content1Ref={content1Ref} />
-
-        {isImgModalState ? <Enlargement index={imgModalState} /> : null}
       </section>
-      <>
+      {isImgModalState ? <Enlargement index={imgModalState} /> : null}
+      <section className="navigator-bar">
         <Nav content1Ref={content1Ref} />
-      </>
+      </section>
     </div>
   );
 }

@@ -10,7 +10,12 @@ export default function Price({ content1Ref }: scrollRef) {
   function zoomFunc(idx: number) {
     setIndex(idx);
     setZoom(!zoom);
-    window.scrollTo(0, 10000);
+    if (content1Ref.current) {
+      content1Ref.current[4]?.scrollIntoView({
+        behavior: "auto",
+        block: "start",
+      });
+    }
   }
 
   return (

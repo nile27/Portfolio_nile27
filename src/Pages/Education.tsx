@@ -1,11 +1,10 @@
 import { maxView } from "../atoms/viewMax";
 import { useRecoilValue } from "recoil";
 import { scrollRef } from "../App";
-import { useState } from "react";
-import WMModal from "./WM_modal";
+
 export default function Education({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
-  const [isModal, setIsModal] = useState<boolean>(false);
+
   return (
     <div
       className="box"
@@ -67,7 +66,12 @@ export default function Education({ content1Ref }: scrollRef) {
 
               <button
                 onClick={() => {
-                  window.scrollTo(0, 10000);
+                  if (content1Ref.current) {
+                    content1Ref.current[4]?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
                 }}
               >
                 수상 링크

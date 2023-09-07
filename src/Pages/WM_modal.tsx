@@ -61,9 +61,7 @@ export default function WMModal({ setIsModal }: isModal) {
           <button className="left" onClick={prevScrollFunc}></button>
           <div className="overflow-container">
             <div className="swipe-container" ref={slideRef}>
-              <div className="swipe">
-                <video src="/videos/시연영상.mp4" muted autoPlay loop />
-              </div>
+              <div className="swipe"></div>
               {imgArr.map((item, idx) => {
                 return (
                   <div className="swipe" key={idx}>
