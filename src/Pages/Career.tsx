@@ -1,8 +1,7 @@
 import { maxView } from "../atoms/viewMax";
 import { useRecoilValue } from "recoil";
 import { scrollRef } from "../App";
-import { useState } from "react";
-import WMModal from "./WM_modal";
+
 import WM1 from "../img/WM/옆면.jpeg";
 import WM2 from "../img/WM/수다미 내부.jpeg";
 import WM3 from "../img/WM/수다미 설계.jpeg";
@@ -10,7 +9,7 @@ import WM4 from "../img/WM/수다미 정면.jpeg";
 
 export default function Career({ content1Ref }: scrollRef) {
   const view = useRecoilValue(maxView);
-  const [isModal, setIsModal] = useState<boolean>(false);
+
   const imgArr: string[] = [WM1, WM2, WM3, WM4];
   return (
     <div
@@ -32,16 +31,8 @@ export default function Career({ content1Ref }: scrollRef) {
                   <h2 id="career-header">WM - 개인 사업자</h2>
                 </div>
               )}
-
-              <button
-                onClick={() => {
-                  setIsModal(!isModal);
-                }}
-              >
-                시제품
-              </button>
             </div>
-            {isModal ? <WMModal setIsModal={setIsModal} /> : null}
+
             <span className="career-date">2020.03 ~ 2021.03</span>
             <div className="career-flex-box">
               <div className="video-box">
