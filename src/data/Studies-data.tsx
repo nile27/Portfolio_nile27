@@ -48,6 +48,15 @@ export const arr: StudiesObj[] = [
   },
   {
     id: 4,
+    date: `2023.09.12 `,
+    finish: "진행 중",
+    name: "실전 프로젝트로 배우는 타입스크립트",
+    subname: "인프런 영상 강의",
+    Link: null,
+    list: ["실전 프로젝트를 통해 타입스크립트를 직접 적용 및 실습"],
+  },
+  {
+    id: 5,
     date: `2022.11 `,
     finish: "진행 중",
     name: "프로그래머스",

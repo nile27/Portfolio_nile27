@@ -41,7 +41,7 @@ export default function Education({ content1Ref }: scrollRef) {
                 협업 프로젝트 2회 진행
                 <ul>
                   <li>Main - Project : 맛집 탐색 사이트</li>
-                  <li>Pre-Project : 스택 오버플로우 클론</li>
+                  <li>Pre - Project : 스택 오버플로우 클론</li>
                 </ul>
               </li>
             </ol>
@@ -137,7 +137,9 @@ export default function Education({ content1Ref }: scrollRef) {
                     수면 위를 떠다니며 녹조를 빨아드려 필터로 걸러내는 제품
                   </li>
                   <li>아이디어 개발 담당 (총 7명)</li>
-                  <li>Hannam Star Venture 상상창업 경진대회 최우수상</li>
+                  <li>
+                    Hannam Star Venture 상상창업 경진대회 최우수상 - 2019.12
+                  </li>
                 </ul>
               </li>
 
@@ -149,7 +151,7 @@ export default function Education({ content1Ref }: scrollRef) {
                     전원 제어를 하는 제품
                   </li>
                   <li>Arduino 개발 담당</li>
-                  <li>2022 컴퓨터공학과 학술제 장려상</li>
+                  <li>2022 컴퓨터공학과 학술제 장려상 - 2022.06</li>
                 </ul>
               </li>
             </ol>
