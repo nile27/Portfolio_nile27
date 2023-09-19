@@ -48,7 +48,7 @@ export const arr: StudiesObj[] = [
   },
   {
     id: 4,
-    date: `2023.09.12 `,
+    date: `2023.09`,
     finish: "진행 중",
     name: "실전 프로젝트로 배우는 타입스크립트",
     subname: "인프런 영상 강의",
