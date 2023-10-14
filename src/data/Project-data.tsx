@@ -1,8 +1,3 @@
-import Portfolio1 from "../img/Portfolio/portfoilo1.gif";
-import Portfolio2 from "../img/Portfolio/portfoilo2.gif";
-import Portfolio3 from "../img/Portfolio/portfoilo3.gif";
-import Portfolio4 from "../img/Portfolio/portfoilo4.gif";
-
 interface projectTap {
   head: string;
   date: string;
