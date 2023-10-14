@@ -1,7 +1,7 @@
-import Portfolio1 from "../img/Portfolio/portfolio1.gif";
-import Portfolio2 from "../img/Portfolio/portfolio2.gif";
-import Portfolio3 from "../img/Portfolio/portfolio3.gif";
-import Portfolio4 from "../img/Portfolio/portfolio4.gif";
+import Portfolio1 from "../img/Portfolio/portfoilo1.gif";
+import Portfolio2 from "../img/Portfolio/portfoilo2.gif";
+import Portfolio3 from "../img/Portfolio/portfoilo3.gif";
+import Portfolio4 from "../img/Portfolio/portfoilo4.gif";
 
 interface projectTap {
   head: string;
@@ -34,6 +34,7 @@ export const projectArr: projectTap[] = [
       "https://user-images.githubusercontent.com/118884127/240876205-8526ffcd-84a9-48aa-a49e-7f36252d5e2a.gif",
       "https://user-images.githubusercontent.com/118884127/240876213-8a1fc9cd-ac09-4efe-baf8-0c6035199baf.gif",
       "https://user-images.githubusercontent.com/118884127/241088286-99f4ff31-8496-489e-bb63-96388298cc00.gif",
+      "https://user-images.githubusercontent.com/118884127/240876220-2d012f0b-fb86-4f9d-8242-1c225cc88eb9.gif",
     ],
     member: "Team: FE: 4명, BE: 3명",
     Highlight: `“점심은 뭐 먹지”, “한 끼를 먹어도 제대로 먹어야지”라는 고민, 맛집 탐방이 취미인 사용자들을 위한 맛집 탐색 사이트`,
@@ -65,7 +66,12 @@ export const projectArr: projectTap[] = [
   {
     head: "Portfolio",
     date: "2023.08 ~ 2023.08 (2주)",
-    imgSrc: [Portfolio1, Portfolio2, Portfolio3, Portfolio4],
+    imgSrc: [
+      "https://user-images.githubusercontent.com/114140840/275229014-0fde6d2a-1ed9-4b52-ab7b-d2a66d14926c.gif",
+      "https://user-images.githubusercontent.com/114140840/275229229-ffcd075f-c8bd-4525-8c16-bf36a4e6fa1d.gif",
+      "https://user-images.githubusercontent.com/114140840/275229447-d65d0a1f-830c-468c-aa14-e8e5383065fb.gif",
+      "https://user-images.githubusercontent.com/114140840/275229641-1fea8946-26bc-4322-9c9b-90d8e15d489c.gif",
+    ],
     member: "Solo",
     Highlight: `타입스크립트를 사용하여 제작한 개인 포트폴리오 반응형 웹 사이트입니다.`,
     explanationList: [

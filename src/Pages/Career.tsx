@@ -38,7 +38,10 @@ export default function Career({ content1Ref }: scrollRef) {
               <div className="video-box">
                 <span className="career-span">시제품 시연 영상</span>
                 <video className="video" controls={true} muted>
-                  <source src="/videos/sudam2.mp4" type="video/mp4"></source>
+                  <source
+                    src="https://github.com/nile27/Portfolio_nile27/assets/114140840/ccf7f9e8-4001-4df8-91e2-820f8640dd1c"
+                    type="video/mp4"
+                  ></source>
                 </video>
               </div>
               <ol className="ol">

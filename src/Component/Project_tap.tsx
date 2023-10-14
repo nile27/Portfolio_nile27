@@ -34,8 +34,6 @@ export default function Tap({ idx }: Idx) {
 
   useEffect(() => {
     if (slideRef.current && firstIdx === idx) {
-      slideRef.current.style.width = `${leng + 1}00%`;
-      slideRef.current.style.height = `${((leng * 100) / (leng / 3)) * 10}%`;
       slideRef.current.style.transition = "all 0.5s ease-in-out";
       slideRef.current.style.transform = `translateX(-${
         (100 / (leng + 1)) * count
