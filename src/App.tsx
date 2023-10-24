@@ -8,9 +8,10 @@ import Studies from "./Pages/Studies";
 import Price from "./Pages/Price";
 import Career from "./Pages/Career";
 import Enlargement from "./Component/Img_Enlargement";
+import { projectArr } from "./data/Project-data";
 
 import { useMediaQuery } from "react-responsive";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { maxView } from "./atoms/viewMax";
 import { imgModal, isImgModal } from "./atoms/Price_Modal";
@@ -31,9 +32,23 @@ function App() {
   const imgModalState = useRecoilValue(imgModal);
   const isImgModalState = useRecoilValue(isImgModal);
 
+  function preload() {
+    let img = [];
+    for (let project of projectArr) {
+      for (let i = 0; i < project.imgSrc.length; i++) {
+        img[i] = new Image();
+        img[i].src = project.imgSrc[i];
+      }
+    }
+  }
+
   useEffect(() => {
     setViewMax(View);
   }, [View, setViewMax]);
+
+  useLayoutEffect(() => {
+    preload();
+  }, []);
 
   return (
     <div className="rootBox">
