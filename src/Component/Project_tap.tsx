@@ -5,9 +5,27 @@ import { useState, useRef, useEffect } from "react";
 interface Idx {
   idx: number;
 }
+interface projectTap {
+  head: string;
+  date: string;
+  imgSrc: string[];
+  member: string;
+  Highlight: string | null;
+  explanationList: string[];
+  testEmail: string | null;
+  testPw: string | null;
+  explanation: string | null;
+  retrospect: string;
+  stack: string[];
+  etcStack: string[] | undefined;
+  gitLink: string;
+  siteLink: string;
+  FigmaLink: string | undefined;
+}
 
 export default function Tap({ idx }: Idx) {
   const [count, setCount] = useState<number>(0);
+  const arr: projectTap = projectArr[idx];
   const slideRef = useRef<HTMLDivElement>(null);
   const leng: number = projectArr[idx].imgSrc.length - 1;
   let [firstIdx, setFirstIdx] = useState<number>(0);
@@ -49,15 +67,15 @@ export default function Tap({ idx }: Idx) {
   return (
     <>
       <div className="tap-head">
-        <h1>{projectArr[idx].head}</h1>
-        <span>{projectArr[idx].date}</span>
+        <h1>{arr.head}</h1>
+        <span>{arr.date}</span>
       </div>
       <div className="img-section">
         <div className="gifbox">
           <button className="left" onClick={prevScrollFunc}></button>
           <div className="overflow-container">
             <div className="swipe-container" ref={slideRef}>
-              {projectArr[idx].imgSrc.map((item, idx) => {
+              {arr.imgSrc.map((item, idx) => {
                 return (
                   <div className="swipe" key={idx}>
                     <img src={item} alt={`${idx}`} />
@@ -70,7 +88,7 @@ export default function Tap({ idx }: Idx) {
         </div>
       </div>
       <div className="img-number-box">
-        {projectArr[idx].imgSrc.map((_, idx) => {
+        {arr.imgSrc.map((_, idx) => {
           return count === idx ? (
             <button className="select" key={idx}></button>
           ) : (
@@ -81,45 +99,68 @@ export default function Tap({ idx }: Idx) {
       <div className="site-intro-box">
         <div className="site-intro-head">
           <h1>사이트 소개</h1>
-          <span>{projectArr[idx].member}</span>
+          <span>{arr.member}</span>
         </div>
-        {projectArr[idx].testEmail ? (
+        {arr.testEmail ? (
           <ul className="test-email">
             <h1>테스트 계정</h1>
-            <li>{projectArr[idx].testEmail}</li>
-            <li>{projectArr[idx].testPw}</li>
+            <li>{arr.testEmail}</li>
+            <li>{arr.testPw}</li>
           </ul>
         ) : null}
         <div className="site-intro">
-          <span className="site-Highlight">{projectArr[idx].Highlight}</span>
+          <span className="site-Highlight">{arr.Highlight}</span>
           <ul className="site-explanation">
-            {projectArr[idx].explanationList.map((item, idx) => {
+            {arr.explanationList.map((item, idx) => {
               return <li key={idx}>{item}</li>;
             })}
           </ul>
 
           <div className="site-experience-box">
-            <p>{projectArr[idx].explanation}</p>
+            <p>{arr.explanation}</p>
           </div>
           <div className="site-experience-box">
-            <p>{projectArr[idx].retrospect}</p>
+            <p>{arr.retrospect}</p>
           </div>
         </div>
         <div className="site-stack">
-          {projectArr[idx].stack.map((item, idx) => {
+          {arr.stack.map((item, idx) => {
             return <button key={idx}>{item}</button>;
           })}
         </div>
+        {arr.etcStack !== undefined ? (
+          <div className="site-stack">
+            {arr.etcStack.map((item, idx) => {
+              return <button key={idx}>{item}</button>;
+            })}
+          </div>
+        ) : null}
+
         <div className="site-Link">
-          <a className="git" href={projectArr[idx].gitLink}>
+          <a
+            className="git"
+            href={arr.gitLink}
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={Git} alt="git-icon"></img>
             Github
           </a>
-          <a className="site" href={projectArr[idx].siteLink}>
+          <a
+            className="site"
+            href={arr.siteLink}
+            target="_blank"
+            rel="noreferrer"
+          >
             배포 사이트
           </a>
-          {projectArr[idx].FigmaLink ? (
-            <a className="Figma" href={projectArr[idx].FigmaLink}>
+          {arr.FigmaLink ? (
+            <a
+              className="Figma"
+              href={arr.FigmaLink}
+              target="_blank"
+              rel="noreferrer"
+            >
               Figma (초기 디자인)
             </a>
           ) : null}

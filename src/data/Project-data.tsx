@@ -10,6 +10,7 @@ interface projectTap {
   explanation: string | null;
   retrospect: string;
   stack: string[];
+  etcStack: string[] | undefined;
   gitLink: string;
   siteLink: string;
   FigmaLink: string | undefined;
@@ -22,6 +23,76 @@ interface projectData {
 }
 
 export const projectArr: projectTap[] = [
+  {
+    head: "My_Todo_Calender",
+    date: "2024.02 ~ 2024.03 (4주)",
+    imgSrc: [
+      "https://github.com/nile27/My-Calender/assets/114140840/97d04e13-d75a-460d-b4ef-b424cb442a6e",
+      "https://github.com/nile27/My-Calender/assets/114140840/1f56e936-25ae-4ee2-8f06-025d6f3818a6",
+      "https://github.com/nile27/My-Calender/assets/114140840/ec3691f3-0145-4f1f-8c83-d973c665fcb9",
+      "https://github.com/nile27/My-Calender/assets/114140840/3c667c13-a69a-4642-b582-49c18566a437",
+    ],
+    member: "Solo",
+    Highlight: `React와 Express.js을 이용한 풀스택 프로젝트입니다.`,
+    explanationList: [
+      "반응형 웹 사이트 입니다.",
+      "Tap, Modal 등의 UI을 구현하였습니다.",
+      "메뉴를 통해 해당 위치로 Scroll이 가능합니다.",
+    ],
+    testEmail: null,
+    testPw: null,
+    explanation: "",
+    retrospect: "",
+    stack: [
+      "React",
+      "Figma",
+      "TypeScript",
+      "Redux-toolkit",
+      "Styled-Components",
+      "Date-fns",
+    ],
+    etcStack: ["Axios", "Node.js", "Express.js", "Mongo DB"],
+    gitLink: "https://github.com/nile27/My-Calender",
+    siteLink: "http://my-calender.s3-website.ap-northeast-2.amazonaws.com",
+    FigmaLink:
+      "https://www.figma.com/file/xTzUSN4KQhBr6LU5IobyZ9/Calender?type=design&node-id=0-1&mode=design&t=rB8NpWGo0DaY3fqG-0",
+  },
+  {
+    head: "Portfolio",
+    date: "2023.08 ~ 2023.08 (2주)",
+    imgSrc: [
+      "https://user-images.githubusercontent.com/114140840/275229014-0fde6d2a-1ed9-4b52-ab7b-d2a66d14926c.gif",
+      "https://user-images.githubusercontent.com/114140840/275229229-ffcd075f-c8bd-4525-8c16-bf36a4e6fa1d.gif",
+      "https://user-images.githubusercontent.com/114140840/275229447-d65d0a1f-830c-468c-aa14-e8e5383065fb.gif",
+      "https://user-images.githubusercontent.com/114140840/275229641-1fea8946-26bc-4322-9c9b-90d8e15d489c.gif",
+    ],
+    member: "Solo",
+    Highlight: `타입스크립트를 사용하여 제작한 개인 포트폴리오 반응형 웹 사이트입니다.`,
+    explanationList: [
+      "반응형 웹 사이트 입니다.",
+      "Tap, Modal 등의 UI을 구현하였습니다.",
+      "메뉴를 통해 해당 위치로 Scroll이 가능합니다.",
+    ],
+    testEmail: null,
+    testPw: null,
+    explanation:
+      "포트폴리오를 제작하기 위해 Notion 같은 플랫폼을 사용하다 저 만의 포트폴리오를 만들어 보기 위해서 제작을 하였습니다. css 라이브러리인 styled-component만 사용하다가 다른 css 툴을 사용해 보기 위해서 ScSS를 사용하여 제작하였습니다. 애니메이션 효과를 줄 수 있는 Keyframe을 사용하고, Fade-in/out, DropDown 등 다양한 애니메이션을 제작 하였고, react-responsive라는 라이브러리를 통해 Dom Selector들 보다 쉽게 box의 사이즈 조절을 하여 반응형 웹을 제작하였습니다.",
+    retrospect:
+      "내비게이션 바, DropDown 창 등을 Keyframe을 통해 애니메이션 효과를 주워 변화가 적은 애니메이션으로도, 유저가 사용하기 조금 더 편안한 느낌을 줄 수 있다는 것을 배웠고, 반응형의 사이즈마다 어떤 식으로 정보들을 보여줄지 많은 고민을 했습니다. 그 결과 웹 사이즈가 작아질 때, flex-박스를 통해 보여주는 것보다 아래로 내려주어서 정보 전달에 조금 더 신경 쓰는 것들이 좋은 UI를 가진 다는 것을 앓게 되었습니다. 타입 스크립트를 사용하면서 useState, useRef 등 타입에 대해서 알게 되었고, 또 flexible 한 언어가 아니기 때문에 타입 가드를 사용하는 방법도 배웠습니다.",
+    stack: [
+      "React",
+      "Figma",
+      "TypeScript",
+      "Recoil",
+      "SCSS",
+      "react-responsive",
+    ],
+    etcStack: undefined,
+    gitLink: "https://github.com/nile27/Portfolio_nile27",
+    siteLink: "https://nile27.github.io/",
+    FigmaLink:
+      "https://www.figma.com/file/g0fMpeE9IiQ8Ww1Vd37qBd/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4(UI)?type=design&node-id=0-1&mode=design&t=oLZkiFIQhixAqGtt-0",
+  },
   {
     head: "Eaaaaaaats (맛집 탐색 사이트)",
     date: "2023.06 ~ 2023.06 (4주)",
@@ -53,57 +124,27 @@ export const projectArr: projectTap[] = [
       "Kakao Map API",
       "Figma",
     ],
+    etcStack: undefined,
     gitLink: "https://github.com/nile27/Eaaaaaaats_refectoring",
     siteLink: "http://main22.s3-website.ap-northeast-2.amazonaws.com/",
     FigmaLink: undefined,
-  },
-
-  {
-    head: "Portfolio",
-    date: "2023.08 ~ 2023.08 (2주)",
-    imgSrc: [
-      "https://user-images.githubusercontent.com/114140840/275229014-0fde6d2a-1ed9-4b52-ab7b-d2a66d14926c.gif",
-      "https://user-images.githubusercontent.com/114140840/275229229-ffcd075f-c8bd-4525-8c16-bf36a4e6fa1d.gif",
-      "https://user-images.githubusercontent.com/114140840/275229447-d65d0a1f-830c-468c-aa14-e8e5383065fb.gif",
-      "https://user-images.githubusercontent.com/114140840/275229641-1fea8946-26bc-4322-9c9b-90d8e15d489c.gif",
-    ],
-    member: "Solo",
-    Highlight: `타입스크립트를 사용하여 제작한 개인 포트폴리오 반응형 웹 사이트입니다.`,
-    explanationList: [
-      "반응형 웹 사이트 입니다.",
-      "Tap, Modal 등의 UI을 구현하였습니다.",
-      "메뉴를 통해 해당 위치로 Scroll이 가능합니다.",
-    ],
-    testEmail: null,
-    testPw: null,
-    explanation:
-      "포트폴리오를 제작하기 위해 Notion 같은 플랫폼을 사용하다 저 만의 포트폴리오를 만들어 보기 위해서 제작을 하였습니다. css 라이브러리인 styled-component만 사용하다가 다른 css 툴을 사용해 보기 위해서 ScSS를 사용하여 제작하였습니다. 애니메이션 효과를 줄 수 있는 Keyframe을 사용하고, Fade-in/out, DropDown 등 다양한 애니메이션을 제작 하였고, react-responsive라는 라이브러리를 통해 Dom Selector들 보다 쉽게 box의 사이즈 조절을 하여 반응형 웹을 제작하였습니다.",
-    retrospect:
-      "내비게이션 바, DropDown 창 등을 Keyframe을 통해 애니메이션 효과를 주워 변화가 적은 애니메이션으로도, 유저가 사용하기 조금 더 편안한 느낌을 줄 수 있다는 것을 배웠고, 반응형의 사이즈마다 어떤 식으로 정보들을 보여줄지 많은 고민을 했습니다. 그 결과 웹 사이즈가 작아질 때, flex-박스를 통해 보여주는 것보다 아래로 내려주어서 정보 전달에 조금 더 신경 쓰는 것들이 좋은 UI를 가진 다는 것을 앓게 되었습니다. 타입 스크립트를 사용하면서 useState, useRef 등 타입에 대해서 알게 되었고, 또 flexible 한 언어가 아니기 때문에 타입 가드를 사용하는 방법도 배웠습니다.",
-    stack: [
-      "React",
-      "Figma",
-      "TypeScript",
-      "Recoil",
-      "SCSS",
-      "react-responsive",
-    ],
-    gitLink: "https://github.com/nile27/Portfolio_nile27",
-    siteLink: "https://nile27.github.io/",
-    FigmaLink:
-      "https://www.figma.com/file/g0fMpeE9IiQ8Ww1Vd37qBd/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4(UI)?type=design&node-id=0-1&mode=design&t=oLZkiFIQhixAqGtt-0",
   },
 ];
 
 export const projectHeadArr: projectData[] = [
   {
-    team: "Team",
-    name: "Eaaaaaaats",
-    date: "2023.05 ~ 2023.05",
+    team: "Solo",
+    name: "My_Todo_Calender",
+    date: "2024.02 ~ 2024.03",
   },
   {
     team: "Solo",
     name: "포트폴리오",
     date: "2023.08 ~ 2023.08",
+  },
+  {
+    team: "Team",
+    name: "Eaaaaaaats",
+    date: "2023.05 ~ 2023.05",
   },
 ];

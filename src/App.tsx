@@ -4,7 +4,6 @@ import Introduce from "./Pages/Introduce";
 import Skill from "./Pages/Skill";
 import Education from "./Pages/Education";
 import Project from "./Pages/Project";
-import Studies from "./Pages/Studies";
 import Price from "./Pages/Price";
 import Career from "./Pages/Career";
 import Enlargement from "./Component/Img_Enlargement";
@@ -56,12 +55,10 @@ function App() {
         <Contact content1Ref={content1Ref} />
         <Introduce content1Ref={content1Ref} />
         <Skill content1Ref={content1Ref} />
+        <Project content1Ref={content1Ref} />
         <Career content1Ref={content1Ref} />
         <Price content1Ref={content1Ref} />
-
         <Education content1Ref={content1Ref} />
-        <Project content1Ref={content1Ref} />
-        <Studies content1Ref={content1Ref} />
       </section>
       {isImgModalState ? <Enlargement index={imgModalState} /> : null}
       <section className="navigator-bar">

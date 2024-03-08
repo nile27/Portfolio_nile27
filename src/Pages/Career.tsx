@@ -14,7 +14,7 @@ export default function Career({ content1Ref }: scrollRef) {
   return (
     <div
       className="box"
-      ref={(el) => (content1Ref.current ? (content1Ref.current[3] = el) : null)}
+      ref={(el) => (content1Ref.current ? (content1Ref.current[4] = el) : null)}
     >
       <div className="header">
         <h1 id="header">Career</h1>

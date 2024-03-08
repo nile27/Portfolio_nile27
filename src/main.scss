@@ -270,7 +270,7 @@ body {
   align-items: center;
   border-bottom: 2px solid #3f72af;
 
-  @media screen and(max-width: 850px) {
+  @media screen and (max-width: 850px) {
     padding: 0;
     flex-direction: column;
     justify-content: center;
@@ -397,7 +397,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  @media screen and(max-width: 1300px) {
+  @media screen and (max-width: 1300px) {
     flex-direction: column;
 
     > .profile {
@@ -585,7 +585,7 @@ body {
     font-size: 20px;
     white-space: pre-wrap;
   }
-  @media screen and(max-width:650px) {
+  @media screen and (max-width: 650px) {
     margin-top: 0px;
   }
 }
@@ -918,7 +918,7 @@ body {
     font-weight: 600;
   }
 
-  @media screen and(min-width: 630px) and (max-width: 800px) {
+  @media screen and (min-width: 630px) and (max-width: 800px) {
     > h1 {
       font-size: 20px;
     }
@@ -962,6 +962,7 @@ body {
     background-size: cover;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
 
     &:hover {
       box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
@@ -996,6 +997,8 @@ body {
     background-size: cover;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+
     &:hover {
       box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
     }
@@ -1181,7 +1184,7 @@ body {
     border: 2px solid $seaBlue;
     border-radius: 30px;
     height: auto;
-    @media screen and(max-width: 800px) {
+    @media screen and (max-width: 800px) {
       min-width: 300px;
     }
   }
@@ -1196,7 +1199,7 @@ body {
     white-space: nowrap;
     width: 100%;
 
-    @media screen and(max-width: 800px) {
+    @media screen and (max-width: 800px) {
       flex-direction: column;
       gap: 30px;
       height: 500px;
@@ -1226,7 +1229,7 @@ body {
       > span {
         font-size: $body;
       }
-      @media screen and(max-width: 800px) {
+      @media screen and (max-width: 800px) {
         margin: 0;
         width: 100%;
 

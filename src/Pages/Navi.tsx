@@ -17,11 +17,10 @@ export default function Nav({ content1Ref }: scrollRef) {
     "Contact",
     "Introduce",
     "Skill",
+    "Project",
     "Career",
     "Price",
     "Education",
-    "Project",
-    "Studies",
   ];
 
   function scrollFunc(e: React.MouseEvent<HTMLLIElement, MouseEvent>): void {
@@ -31,11 +30,10 @@ export default function Nav({ content1Ref }: scrollRef) {
       Contact: 0,
       Introduce: 1,
       Skill: 2,
-      Career: 3,
-      Price: 4,
-      Education: 5,
-      Project: 6,
-      Studies: 7,
+      Project: 3,
+      Career: 4,
+      Price: 5,
+      Education: 6,
     };
 
     if (content1Ref.current) {
