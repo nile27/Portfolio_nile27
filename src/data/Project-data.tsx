@@ -53,7 +53,7 @@ export const projectArr: projectTap[] = [
     ],
     etcStack: ["Axios", "Node.js", "Express.js", "Mongo DB"],
     gitLink: "https://github.com/nile27/My-Calender",
-    siteLink: "http://my-calender.s3-website.ap-northeast-2.amazonaws.com",
+    siteLink: "http://calender123.s3-website.ap-northeast-2.amazonaws.com/",
     FigmaLink:
       "https://www.figma.com/file/xTzUSN4KQhBr6LU5IobyZ9/Calender?type=design&node-id=0-1&mode=design&t=rB8NpWGo0DaY3fqG-0",
   },
