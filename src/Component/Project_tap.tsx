@@ -117,15 +117,18 @@ export default function Tap({ idx }: Idx) {
           </ul>
           <h1 className="site-H1">프로젝트 소개</h1>
           <div className="site-experience-box">
-            {arr.explanation.map((item: string) => {
-              return (
+            {arr.explanation.map((item: string, idx: number) => {
+              return idx !== arr.explanation.length - 1 ? (
                 <>
                   <p>{item}</p>
                   <br />
                 </>
+              ) : (
+                <p>{item}</p>
               );
             })}
           </div>
+          <h1 className="site-H1">회고</h1>
           <div className="site-experience-box">
             <p>{arr.retrospect}</p>
           </div>
