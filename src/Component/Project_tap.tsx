@@ -98,7 +98,7 @@ export default function Tap({ idx }: Idx) {
       </div>
       <div className="site-intro-box">
         <div className="site-intro-head">
-          <h1>사이트 소개</h1>
+          <h1>사이트 주요 기능</h1>
           <span>{arr.member}</span>
         </div>
         {arr.testEmail ? (
@@ -115,7 +115,7 @@ export default function Tap({ idx }: Idx) {
               return <li key={idx}>{item}</li>;
             })}
           </ul>
-
+          <h1 className="site-H1">프로젝트 소개</h1>
           <div className="site-experience-box">
             <p>{arr.explanation}</p>
           </div>
