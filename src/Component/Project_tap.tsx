@@ -14,7 +14,7 @@ interface projectTap {
   explanationList: string[];
   testEmail: string | null;
   testPw: string | null;
-  explanation: string | null;
+  explanation: string[];
   retrospect: string;
   stack: string[];
   etcStack: string[] | undefined;
@@ -117,7 +117,14 @@ export default function Tap({ idx }: Idx) {
           </ul>
           <h1 className="site-H1">프로젝트 소개</h1>
           <div className="site-experience-box">
-            <p>{arr.explanation}</p>
+            {arr.explanation.map((item: string) => {
+              return (
+                <>
+                  <p>{item}</p>
+                  <br />
+                </>
+              );
+            })}
           </div>
           <div className="site-experience-box">
             <p>{arr.retrospect}</p>

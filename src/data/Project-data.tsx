@@ -7,7 +7,7 @@ interface projectTap {
   explanationList: string[];
   testEmail: string | null;
   testPw: string | null;
-  explanation: string | null;
+  explanation: string[];
   retrospect: string;
   stack: string[];
   etcStack: string[] | undefined;
@@ -41,7 +41,12 @@ export const projectArr: projectTap[] = [
     ],
     testEmail: null,
     testPw: null,
-    explanation: "",
+    explanation: [
+      "Front-end",
+      "이 프로젝트에서는 Date-fns와 Date-picker를 활용하여 사용자가 원하는 날짜를 선택할 수 있도록 하는 기능을 구현하였습니다. 또한, 컴포넌트의 재사용성을 높이기 위해 useParam을 활용하여 메인 페이지와 지정된 날짜의 페이지를 사이드훅으로 감지하여 컴포넌트를 재사용하였습니다. Redux-toolkit을 이용하여 메뉴 창에서 선택된 태그 데이터를 필터링하여 원하는 결과를 보여주도록 구현하였으며, 공공데이터포털의 공휴일 Open API를 활용하여 한국의 공휴일을 표시하고, New Date 생성자를 활용하여 유저의 날짜를 기준으로 월 별로 볼 수 있는 Month 페이지를 제작하였습니다.",
+      "Back-end",
+      "Node.js를 사용하여 설계한 API에서는 오류 처리에 많은 신경을 써서 안정성을 확보했으며, 태그를 별도로 제작하지 않아도 일정 생성 시 새로운 태그를 자동으로 생성할 수 있도록 설계했습니다. 또한, 일정의 시작과 끝이 겹치는 경우에 대한 오류 처리를 구현하여 충돌을 방지하였으며, 일정을 삭제하거나 수정할 때 해당 일정에 속한 태그가 다른 일정에 사용되지 않을 경우에는 태그가 자동으로 삭제되도록 하였습니다.",
+    ],
     retrospect: "",
     stack: [
       "React",
@@ -75,8 +80,9 @@ export const projectArr: projectTap[] = [
     ],
     testEmail: null,
     testPw: null,
-    explanation:
+    explanation: [
       "포트폴리오를 제작하기 위해 Notion 같은 플랫폼을 사용하다 저 만의 포트폴리오를 만들어 보기 위해서 제작을 하였습니다. css 라이브러리인 styled-component만 사용하다가 다른 css 툴을 사용해 보기 위해서 ScSS를 사용하여 제작하였습니다. 애니메이션 효과를 줄 수 있는 Keyframe을 사용하고, Fade-in/out, DropDown 등 다양한 애니메이션을 제작 하였고, react-responsive라는 라이브러리를 통해 Dom Selector들 보다 쉽게 box의 사이즈 조절을 하여 반응형 웹을 제작하였습니다.",
+    ],
     retrospect:
       "내비게이션 바, DropDown 창 등을 Keyframe을 통해 애니메이션 효과를 주워 변화가 적은 애니메이션으로도, 유저가 사용하기 조금 더 편안한 느낌을 줄 수 있다는 것을 배웠고, 반응형의 사이즈마다 어떤 식으로 정보들을 보여줄지 많은 고민을 했습니다. 그 결과 웹 사이즈가 작아질 때, flex-박스를 통해 보여주는 것보다 아래로 내려주어서 정보 전달에 조금 더 신경 쓰는 것들이 좋은 UI를 가진 다는 것을 앓게 되었습니다. 타입 스크립트를 사용하면서 useState, useRef 등 타입에 대해서 알게 되었고, 또 flexible 한 언어가 아니기 때문에 타입 가드를 사용하는 방법도 배웠습니다.",
     stack: [
@@ -112,8 +118,9 @@ export const projectArr: projectTap[] = [
     ],
     testEmail: "Email - 사장님: test@gmail.com / 유저: user@gmail.com",
     testPw: "PW - 12341234",
-    explanation:
+    explanation: [
       "카카오 지도 API의 주소를 통해 좌표를 얻어내는 기능과 좌표를 다시 지도로 표시해주는 2가지의 기능을 이용해 유저의 위치, 가게들의 위치를 지도의 표시하는 기능을 구현하였습니다. 이 기능을 통해 메인 화면에 유저의 주소 중심으로 가게가 어떤 것이 있는지 확인하는 기능을 구현하였습니다.",
+    ],
     retrospect:
       "사이트를 배포한 후 데이터들을 불러오는 것에 대해 Aws의 비용이 많이드는 것을 확인하여, 리펙토링 기간을 가져 데이터의 흐름들을 다시 파악하고, Aws를 통해 데이터를 요청하는 횟수를 줄인 경험이 있습니다. 데이터 흐름을 줄여 하나의 상태에 관리가 됨으로써 유지 보수도 전보다 수월해진 경험을 했습니다.",
     stack: [
