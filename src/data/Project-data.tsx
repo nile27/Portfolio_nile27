@@ -25,7 +25,7 @@ interface projectData {
 export const projectArr: projectTap[] = [
   {
     head: "My_Todo_Calender",
-    date: "2024.02 ~ 2024.03 (4주)",
+    date: "2024.02 ~ 2024.03 (5주)",
     imgSrc: [
       "https://github.com/nile27/My-Calender/assets/114140840/97d04e13-d75a-460d-b4ef-b424cb442a6e",
       "https://github.com/nile27/My-Calender/assets/114140840/1f56e936-25ae-4ee2-8f06-025d6f3818a6",
