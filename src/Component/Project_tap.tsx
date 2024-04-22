@@ -15,12 +15,14 @@ interface projectTap {
   testEmail: string | null;
   testPw: string | null;
   explanation: string[];
-  retrospect: string;
+  retrospect: string | undefined;
+  retrospect_sub: string | undefined;
   stack: string[];
   etcStack: string[] | undefined;
   gitLink: string;
   siteLink: string;
   FigmaLink: string | undefined;
+  study: string[] | undefined;
 }
 
 export default function Tap({ idx }: Idx) {
@@ -98,7 +100,7 @@ export default function Tap({ idx }: Idx) {
       </div>
       <div className="site-intro-box">
         <div className="site-intro-head">
-          <h1>사이트 주요 기능</h1>
+          <h1>⭐️ 사이트 주요 기능</h1>
           <span>{arr.member}</span>
         </div>
         {arr.testEmail ? (
@@ -115,23 +117,27 @@ export default function Tap({ idx }: Idx) {
               return <li key={idx}>{item}</li>;
             })}
           </ul>
-          <h1 className="site-H1">프로젝트 소개</h1>
-          <div className="site-experience-box">
+          <h1 className="site-H1">⭐️ 작업 기여도</h1>
+          <ul className="site-explanation">
             {arr.explanation.map((item: string, idx: number) => {
-              return idx !== arr.explanation.length - 1 ? (
-                <>
-                  <p>{item}</p>
-                  <br />
-                </>
-              ) : (
-                <p>{item}</p>
-              );
+              return <li key={idx}>{item}</li>;
             })}
-          </div>
-          <h1 className="site-H1">회고</h1>
-          <div className="site-experience-box">
-            <p>{arr.retrospect}</p>
-          </div>
+          </ul>
+          {arr.retrospect ? <h1 className="site-H1">⭐️ 트러블 슈팅</h1> : null}
+          {arr.retrospect ? (
+            <ul className="site-explanation">
+              <li>{arr.retrospect}</li>
+              <p>{arr.retrospect_sub}</p>
+            </ul>
+          ) : null}
+          {arr.study ? <h1 className="site-H1">⭐️ 배운 점</h1> : null}
+          {arr.study ? (
+            <ul className="site-explanation">
+              {arr.study.map((item, idx) => {
+                return <li key={idx}>{item}</li>;
+              })}
+            </ul>
+          ) : null}
         </div>
         <div className="site-stack">
           {arr.stack.map((item, idx) => {

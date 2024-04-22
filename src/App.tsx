@@ -5,7 +5,7 @@ import Skill from "./Pages/Skill";
 import Education from "./Pages/Education";
 import Project from "./Pages/Project";
 import Price from "./Pages/Price";
-import Career from "./Pages/Career";
+
 import Enlargement from "./Component/Img_Enlargement";
 import { projectArr } from "./data/Project-data";
 
@@ -56,7 +56,7 @@ function App() {
         <Introduce content1Ref={content1Ref} />
         <Skill content1Ref={content1Ref} />
         <Project content1Ref={content1Ref} />
-        <Career content1Ref={content1Ref} />
+
         <Price content1Ref={content1Ref} />
         <Education content1Ref={content1Ref} />
       </section>

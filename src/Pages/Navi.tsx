@@ -18,7 +18,7 @@ export default function Nav({ content1Ref }: scrollRef) {
     "Introduce",
     "Skill",
     "Project",
-    "Career",
+
     "Price",
     "Education",
   ];
@@ -31,9 +31,8 @@ export default function Nav({ content1Ref }: scrollRef) {
       Introduce: 1,
       Skill: 2,
       Project: 3,
-      Career: 4,
-      Price: 5,
-      Education: 6,
+      Price: 4,
+      Education: 5,
     };
 
     if (content1Ref.current) {

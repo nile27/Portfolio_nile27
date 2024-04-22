@@ -8,7 +8,7 @@ export default function Education({ content1Ref }: scrollRef) {
   return (
     <div
       className="box"
-      ref={(el) => (content1Ref.current ? (content1Ref.current[6] = el) : null)}
+      ref={(el) => (content1Ref.current ? (content1Ref.current[5] = el) : null)}
     >
       <div className="header">
         <h1 id="header">Education</h1>
@@ -67,7 +67,7 @@ export default function Education({ content1Ref }: scrollRef) {
               <button
                 onClick={() => {
                   if (content1Ref.current) {
-                    content1Ref.current[4]?.scrollIntoView({
+                    content1Ref.current[5]?.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
                     });
