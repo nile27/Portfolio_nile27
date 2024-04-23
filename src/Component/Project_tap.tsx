@@ -1,29 +1,30 @@
 import Git from "../img/uiw_github.svg";
 import { projectArr } from "../data/Project-data";
+import { projectTap, Retro } from "../data/Project-data";
 import { useState, useRef, useEffect } from "react";
 
 interface Idx {
   idx: number;
 }
-interface projectTap {
-  head: string;
-  date: string;
-  imgSrc: string[];
-  member: string;
-  Highlight: string | null;
-  explanationList: string[];
-  testEmail: string | null;
-  testPw: string | null;
-  explanation: string[];
-  retrospect: string | undefined;
-  retrospect_sub: string | undefined;
-  stack: string[];
-  etcStack: string[] | undefined;
-  gitLink: string;
-  siteLink: string;
-  FigmaLink: string | undefined;
-  study: string[] | undefined;
-}
+// interface projectTap {
+//   head: string;
+//   date: string;
+//   imgSrc: string[];
+//   member: string;
+//   Highlight: string | null;
+//   explanationList: string[];
+//   testEmail: string | null;
+//   testPw: string | null;
+//   explanation: string[];
+//   retrospect: string[] | undefined;
+//   retrospect_sub: string | undefined;
+//   stack: string[];
+//   etcStack: string[] | undefined;
+//   gitLink: string;
+//   siteLink: string;
+//   FigmaLink: string | undefined;
+//   study: string[] | undefined;
+// }
 
 export default function Tap({ idx }: Idx) {
   const [count, setCount] = useState<number>(0);
@@ -123,11 +124,18 @@ export default function Tap({ idx }: Idx) {
               return <li key={idx}>{item}</li>;
             })}
           </ul>
-          {arr.retrospect ? <h1 className="site-H1">⭐️ 트러블 슈팅</h1> : null}
-          {arr.retrospect ? (
+          {arr.retro ? <h1 className="site-H1">⭐️ 트러블 슈팅</h1> : null}
+          {arr.retro ? (
             <ul className="site-explanation">
-              <li>{arr.retrospect}</li>
-              <p>{arr.retrospect_sub}</p>
+              {arr.retro.map((item: Retro, idx: number) => {
+                return (
+                  <>
+                    <li>{item.retrospect}</li>
+                    <p>{item.retrospect_sub}</p>
+                    <br />
+                  </>
+                );
+              })}
             </ul>
           ) : null}
           {arr.study ? <h1 className="site-H1">⭐️ 배운 점</h1> : null}

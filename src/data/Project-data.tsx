@@ -1,4 +1,4 @@
-interface projectTap {
+export interface projectTap {
   head: string;
   date: string;
   imgSrc: string[];
@@ -8,14 +8,18 @@ interface projectTap {
   testEmail: string | null;
   testPw: string | null;
   explanation: string[];
-  retrospect: string | undefined;
-  retrospect_sub: string | undefined;
+  retro: Retro[] | undefined;
   stack: string[];
   etcStack: string[] | undefined;
   gitLink: string;
   siteLink: string;
   FigmaLink: string | undefined;
   study: string[] | undefined;
+}
+
+export interface Retro {
+  retrospect: string;
+  retrospect_sub: string;
 }
 
 interface projectData {
@@ -53,9 +57,21 @@ export const projectArr: projectTap[] = [
       "Mongoose 라이브러리를 통해 CRUD 구현",
       "ExpressJS를 이용하여 일정, 검색 API 개발",
     ],
-    retrospect:
-      "하나의 일정이 있는 태그가 있을 때, 일정을 삭제할 때 태그도 같이 삭제 되는 버그 수정",
-    retrospect_sub: undefined,
+    retro: [
+      {
+        retrospect:
+          "Todo-list 페이지에서 새로 고침 시 메인 페이지로 바뀌는 현상 (컴포넌트 재사용 버그 - 오늘의 Todo-list page & day’s Todo-list page)",
+        retrospect_sub:
+          "useParams와 useEffect를 이용하여 특정 일의 Todo-list 페이지로 들어왔을 때에 엔드 포인트를 통해 해당되는 날짜의 Todo-list만 보일 수 있도록 수정",
+      },
+      {
+        retrospect:
+          "한 태그의 모든 일정이 삭제되었을 때, 태그가 아직 남는 버그 현상",
+        retrospect_sub:
+          "태그 자체에 일정 count 객체를 추가하여 count가 0이 되면 태그 삭제 ",
+      },
+    ],
+
     stack: [
       "React",
       "Figma",
@@ -97,8 +113,7 @@ export const projectArr: projectTap[] = [
       "react-responsive 라이브러리를 통해 Dom Selector들 보다 쉽게 box의 사이즈 조절을 하여 반응형 웹 제작",
       "글, 이미지 등을 따로 관리하여 유지보수를 쉽게 제작",
     ],
-    retrospect: undefined,
-    retrospect_sub: undefined,
+    retro: undefined,
     stack: [
       "React",
       "Figma",
@@ -144,10 +159,15 @@ export const projectArr: projectTap[] = [
       "Recoil을 이용하여 전역상태관리",
       "ReactJS 개발환경부터 S3 Bucket 환경까지 구성 및 개발 진행",
     ],
-    retrospect:
-      "AWS 과금이 예상보다 많아, 데이터 흐름을 재조정하는 리펙토링 진행 ",
-    retrospect_sub:
-      "어떤 정보를 불러올 때, 데이터를 여러번 불러오는 현상 때문에 과금이 많이 발생이 되어서, 데이터 호출 함수를 기존 보다 상단 위치의 컴포넌트에 작성하여 데이터 호출을 줄이고, 재사용한 데이터을 세션 스토리지에 저장하여 중복 호출을 줄인 경험이 있습니다.",
+    retro: [
+      {
+        retrospect:
+          "AWS 과금이 예상보다 많아, 데이터 흐름을 재조정하는 리펙토링 진행 ",
+        retrospect_sub:
+          "어떤 정보를 불러올 때, 데이터를 여러번 불러오는 현상 때문에 과금이 많이 발생이 되어서, 데이터 호출 함수를 기존 보다 상단 위치의 컴포넌트에 작성하여 데이터 호출을 줄이고, 재사용한 데이터을 세션 스토리지에 저장하여 중복 호출을 줄인 경험이 있습니다.",
+      },
+    ],
+
     stack: [
       "React",
       "styled-component",
